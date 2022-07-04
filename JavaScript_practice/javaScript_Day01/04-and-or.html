@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 공백 없는 문자열은 무조건 "true" 라고 본다!!★★★★★
+
+        // && : 앞 결과가 true면 뒤의 값을 리턴함
+        // || : 앞 결과가 true면 앞의 값을 리턴함(굳이 뒤 까지 가지 않음)
+        console.log("cat" && "dog"); // dog
+        console.log("cat" || "dog"); // cat
+
+        // && : 앞 결과가 false이면 굳이 뒤의 연산을 하지 않는다.
+        // || : 앞 결과가 true이면 굳이 뒤의 연산을 하지 않는다.
+        console.log(false && "cat"); // false
+        console.log("cat" && false); // false
+        
+        console.log(false || "cat"); // cat
+        console.log("cat" || false); // cat
+    </script>
+
+</body>
+</html>

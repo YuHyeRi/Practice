@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+
+    <script>
+        loop1:
+        for (let i = 0; i < 3; i++) {
+            for (let i2 = 0; i2 < 3; i2++) {
+                if(i == 1 && i2 == 0) continue loop1; 
+                console.log(`i = ${i}      i2 = ${i2}`);
+            }  
+        }
+
+        loop2:
+        for (let j = 0; j < 3; j++) {
+            for (let j2 = 0; j2 < 3; j2++) {
+                if(j == 1 && j2 == 0) break loop2;
+                console.log(`j = ${j}      j2 = ${j2}`);
+            }  
+        }
+    </script>
+
+</body>
+</html>

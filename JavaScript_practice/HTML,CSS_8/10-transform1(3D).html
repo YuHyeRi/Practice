@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .origin {
+            width: 200px;
+            height: 135px;
+            border: 1px solid;
+            float: left;
+            margin: 40px;}
+
+        .movex:hover {
+            transform: translateX(50px);}
+
+        .movey:hover {
+            transform: translateY(20px);}
+
+        .movexy:hover {
+            transform: translate(10px, 20px);}
+
+        /* perspective : 그림을 입체적으로 바꿔줌 (축소되거나 확대되거나) */
+        .movez:hover {
+            transform: perspective(500px) translateZ(-40px);}
+
+        .move3d:hover {
+            transform: perspective(500px) translate3d(20px, 30px, 80px);}
+    </style>
+</head>
+
+<body>
+    <div class="origin">
+        <div class="movex"><img src="../0527/media/heart.png" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="movey"><img src="../0527/media/heart.png" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="movexy"><img src="../0527/media/heart.png" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="movez"><img src="../0527/media/heart.png" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="move3d"><img src="../0527/media/heart.png" alt=""></div>
+    </div>
+</body>
+
+</html>

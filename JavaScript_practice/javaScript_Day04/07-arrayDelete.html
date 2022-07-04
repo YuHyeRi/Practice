@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ['a', 'b', 'c', 'd'];
+        // delete arr[2];
+        // console.log(arr);   // [a, b, empty, d]
+        // console.log(arr.length);    // delete 했어도 그 값이 'empty'로 되니 length는 4로 나옴
+        // 때문에 객체가 아닌 배열에서는 되도록 delete 사용을 지양
+
+        var a = arr.slice(0,2).concat(arr.slice(3));
+        console.log(a);     // a, b, d
+
+    </script>
+</body>
+</html>

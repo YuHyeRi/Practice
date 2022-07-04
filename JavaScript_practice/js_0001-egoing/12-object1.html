@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const superman = {
+            name : 'jane',
+            age : 31,
+        }
+        console.log(superman);
+        console.log(superman.name);
+        console.log(superman['age']);
+
+        superman.hairColor = 'blonde';  // 추가
+        superman['bobby'] = 'football'; // 추가
+        console.log(superman);
+
+        delete superman.age;  // 삭제
+        console.log(superman);
+    </script>
+
+</body>
+</html>

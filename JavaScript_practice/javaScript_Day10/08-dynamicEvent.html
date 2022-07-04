@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        // 전역 동적 이벤트 리스너
+        // 너무 많이 쓰면 도큐멘트가 무거워지니 많이 쓰지는 말 것
+        
+        $(function() {
+            $(document).on('click','#btn',function() {          // document, click, 아이디나 클래스, function
+                alert('hello world!')
+            })
+            $('#content').append('<button id="btn"> 버튼 </button>');
+        });
+       
+    </script>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>

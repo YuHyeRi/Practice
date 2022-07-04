@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('.btn1').on('click',function() {
+                $('.txt1').delay(1000).animate({    // delay를 주고 싶다면 이런식으로
+                    marginLeft : '500px',
+                    fontSize : '2rem'               // 변화시키고 싶은 내용을 복수로 쓸수도 있음! (,)
+                },2000,'swing',function() {
+                    // swing : 시작/끝에서는 느리게 움직이지만 중간에는 빨라짐
+                    // linear : 일정한 속도로 움직임
+                    alert('이동 완룡 >. <!!')
+                });
+            });
+            $('.btn2').on('click', function() {
+                $('.txt2').animate({
+                    marginLeft : '+=50'         // 클릭할때마다 50씩 이동 (현재상태에서 계속 이동할 때 씀, +=)
+                },1000).animate({
+                    marginLeft : '-=50px'       // 이렇게 하면 왔다리 갔다리도 쌉가능
+                })
+            });
+        });
+    </script>
+    <style>
+        .txt1 {
+            background-color: salmon;
+        }
+        .txt2 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <p><button class="btn1">버튼1</button></p>
+    <span class="txt1">500px 이동</span>
+    <p><button class="btn2">버튼2</button></p>
+    <span class="txt2">50px 이동</span>
+</body>
+</html>

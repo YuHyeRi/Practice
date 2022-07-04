@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var x = 5;
+        var y = 10;
+        var z = 25;
+        console.log(x); // 5
+        console.log(y); // 10
+        console.log(z); // 25
+
+        x = y;
+        console.log(x); // 10
+        console.log(y); // 10
+
+        x = y = z;
+        console.log(x); // 25
+        console.log(y); // 25
+        console.log(z); // 25
+
+        var a = 5;
+        a += 2; // a = a + 2
+        console.log(a); // 7
+        a -= 2; // a = a - 2
+        console.log(a); // 5
+
+        var a, b, b;
+        a = b = 3, c = 4;
+        console.log(a); //3
+        console.log(b); //3
+        console.log(c); //4
+
+        var x, y, z;
+        x = (y = 5, z = 6); 
+        console.log(x); // 6 : 가장 오른쪽 변수에 할당 된 값을 가짐
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        // prevuntil과 nextuntil은 방향이 다름!! (prev는 위로, next는 아래로)
+        $(function() {
+            $('.parent').parent().css('color','blue');                  
+            // .parent의 부모요소에 적용 (첫번째 ul태그에만 적용) / 내 상위에 잇는 애
+
+            $('.parents').parents().css('background-color', 'gray')     
+            // .parents의 모든 부모요소에 적용 (내 위에 있는 모든 상위태그에 전부다 -> ul, div, body) / 
+            // 내 상위에 잇는애 전부
+
+            $('.children').children().css('border', '1px solid black')  
+
+            $('.prev').prev().css('background-color', 'pink')           
+            // .prev 바로 이전 요소에 적용
+
+            $('.prev').prevAll().css('color', 'red')                    
+            // .prev 이전 모든 요소에 적용
+
+            $('.prevuntil').prevUntil('.prev').css('background-color', 'green')     
+            //.prevuntil과 .prev 사이에 있는 요소에 적용
+
+            $('.next').next().css('font-family', '궁서')    
+            // .next 바로 뒤 요소에 적용
+
+            $('.next').nextAll().css('border', '2px dashed blue')   
+            // .next 뒤에 있는 모든 요소에 적용
+
+            $('.next').nextUntil('.nextuntil').css('background-color', 'orange')        
+            // .next와 .nextuntil 사이에 요소들에 적용
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <ul class="children">
+            <li class="parent">item1</li>
+            <li class="parents">item2</li>
+            <li class="prev">item3</li>
+            <li>item4</li>
+            <li class="prevuntil">item5</li>
+        </ul>
+        <ul>
+            <li class="next">item6</li>
+            <li>item7</li>
+            <li>item8</li>
+            <li>item9</li>
+            <li class="nextuntil">item10</li>
+        </ul>
+    </div>
+</body>
+</html>

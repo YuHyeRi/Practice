@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./basic-flex.css">
+    <style>
+        /* flex-grow : 아이템의 공백의 크기에 비율을 맞춰 동일하게 확장시켜줌 */
+        /* flex-basis, flex-shrink 와 보통 함께 사용 */
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-item {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="flex-item">box1</div>
+        <div class="flex-item">box2</div>
+        <div class="flex-item">box3</div>
+    </div>
+</body>
+</html>

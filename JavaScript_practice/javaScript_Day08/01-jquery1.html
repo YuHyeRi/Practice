@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        // 방법 1
+        // window.addEventListener("DOMContentLoaded", function() {
+        //     document.write('<h3>이것은 일반 DOM을 활용해 출력한 문장 입니다.</h3>')
+        // })
+
+        // 방법 2
+        // $(document).ready(function() {
+        //     document.write('<h3>이것은 jquery ready를 이용해 출력한 문장 입니다.</h3>')
+        // })
+
+        // 방법 3 --> 주로 얘를 씀
+        $(function() {
+            document.write("<h3>이것은 jquery를 이용해 출력한 문장 입니다.</h3>")
+        });
+        //$('querySelector, querySelctorAll와 같은 의미')
+    </script>
+</head>
+<body>
+  
+</body>
+</html>

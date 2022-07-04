@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            text-align: center;
+            color: gray;
+        }
+        table {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            width: 200px;
+            margin: 0 auto;
+        }
+        td {
+            text-align: center;
+            padding: 10px;
+        }
+        table tr:nth-child(2n) {
+            background-color: silver;
+            /* nth-child > 2n : 짝수, 2n+1 : 홀수 */
+            /* table tr:first-child {} : 첫번째 셀에만 */
+            /* table tr:last-child{} : 마지막 셀에만 */
+        }
+        table tr:hover {
+            background-color: salmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Example</h1>
+        <table>
+            <tr>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

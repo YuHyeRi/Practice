@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 문자를 선언하는 방법 3가지
+        const p1 = "hello world";
+        const p2 = 'hello world';
+        const p3 = `hello world`;
+
+        const message1 = "I'm a boy";
+        const message2 = 'I\'m a boy';
+
+        const message3 = `My name is ${p1}`;
+        console.log(message3);
+
+        const message4 = `나는 ${30+1}살 입니다.`;
+        console.log(message4);
+    </script>
+    
+    <script>
+        // typeof 연산자 : 변수 타입을 모를 때
+        console.log(typeof 3); // number
+        console.log(typeof name); // String
+        console.log(typeof true); // boolean
+        console.log(typeof "XXX"); // String
+        console.log(typeof null); // object // 객체형(null은 객체가 아님, 이건 자바의 오류)
+        console.log(typeof undefined); // undefined
+    </script>
+
+</body>
+</html>

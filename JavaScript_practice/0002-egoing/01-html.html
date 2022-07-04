@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="01-css1.css">
+    <!-- 
+        link rel="속성값", css불러올 경우 속성값은 stylesheet 이다. 
+    -->
+</head>
+
+<body>
+    <h1>WEB</h1>
+    <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';
+    ">
+    <!-- 색상 지정시 ''(작은따옴표)를 쓰는 이유는 onclick 에서 이미 ""(큰따옴표)를 사용 했기 때문이다. (""쓰려면 닫아주고 써야함) -->
+    <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';
+    ">
+
+    <div class="list">
+        <ol>
+            <li><a href="01-html.html">HTML</a></li>
+            <li><a href="02-css.html">CSS</a></li>
+            <li><a href="03-javaScript.html">javaScript</a></li>
+        </ol>
+        <div class="content">
+            <h2>HTML</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat vitae soluta beatae perspiciatis reiciendis quos dolores,
+                dolorem veniam tempora accusamus nemo aliquam quibusdam.
+                At corrupti officiis adipisci atque vel doloribus.</p>
+        </div>
+    </div>
+</body>
+
+</html>

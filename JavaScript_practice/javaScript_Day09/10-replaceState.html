@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+</head>
+
+<body>
+   <section>
+      <h2>push state</h2>
+      <button id="push-state1">pushState1</button>
+      <button id="push-state2">pushState2</button>
+      <button id="push-state3">pushState3</button>
+   </section>
+   <section>
+      <h2>replace state</h2>
+      <button id="replace-state">replaceState</button>
+   </section>
+   <section>
+      <h2>history state</h2>
+      <span id="state"></span>
+   </section>
+   <script type="text/javascript">
+      // pushState()
+      document.getElementById('push-state1').addEventListener('click', () => {
+         history.pushState({ data: 'pushState1' }, '', '#/push-state1');
+      });
+      document.getElementById('push-state2').addEventListener('click', () => {
+         history.pushState({ data: 'pushState2' }, '', '#/push-state2');
+      });
+      document.getElementById('push-state3').addEventListener('click', () => {
+         history.pushState({ data: 'pushState3' }, '', '#/push-state3');
+      });
+
+      // replaceState()
+      document.getElementById('replace-state').addEventListener('click', () => {
+         history.replaceState({ data: 'replaceState' }, '', '#/replace-state');
+      });
+
+      window.addEventListener("popstate", function (event) {
+         document.getElementById('state').innerText = JSON.stringify(history.state);
+         console.log(event.state);
+      });
+
+   </script>
+</body>
+
+</html>

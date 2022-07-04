@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('li:first').css('color', 'blue');     // li의 첫번째 요소
+            // $('li').first().css('color', 'blue');    
+
+            $('li:last').css('color', 'red');       // li의 마지막 요소
+            // $('li').last().css('color', 'red');
+
+            $('li:odd').css('text-decoration', 'overline')      
+            // odd -> li의 홀수 (★ index가 0부터 시작이니까!!!!!! 주의하자!!)
+
+            $('li:even').css('text-decoration', 'underline')      
+            // even -> li의 짝수 (★ index가 0부터 시작이니까!!!!!! 주의하자!!)
+
+            $('li').eq(0).css('border', '3px dashed green')     
+            // li의 0번 index에 적용
+
+            $('li:nth-child(3n)').css('font-family', '궁서');       
+            // li의 자식 중 3번째 배수마다 적용 (얘는 0부터가 아니라 1부터 셈!!!!)
+
+            $('li:nth-of-type(2)').css('color', 'orange')   
+            // 같은 유형의 n번째 형제요소를 선택 -> li의 두번째 요소 선택
+
+            $('li:nth-last-of-type(2)').css('background-color', 'salmon')        
+            // 위와 반대, 뒤에서부터 셈
+
+            $('li:only-child').css('background-color', 'purple')        
+            // 블럭 안에 내가 가르킨 요소가 하나만 존재할 경우, 그걸 적용
+
+            $('li:gt(10)').css('transform', 'rotatez(-5deg)')       
+            // gt - greater than ( > ), 인덱스 10보다 큰 것들에게 적용 (11, 12)
+
+            $('li:lt(2)').css('transform', 'translateX(2rem)')       
+            // lt - less than ( < ), 인덱스 2보다 작은 것들에게 적용 (0, 1)
+            
+            $('li').slice(0,2).css('color', 'hotpink');     
+            // 인덱스 0,1 만 변경 (2는 포함 X)
+
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+    </ul>
+    <ul>
+        <li>item7</li>
+        <li>item8</li>
+        <li>item9</li>
+        <li>item10</li>
+        <li>item11</li>
+        <li>item12</li>
+    </ul>
+    <ul>
+        <li>item13</li>
+    </ul>
+</body>
+</html>

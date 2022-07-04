@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- transition : 전환 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            font-size: 3rem;
+            display: inline-block;
+            /* transition-property: all; */
+            /* 장면 효과를 누구에게 줄 것인가 */
+            /* transition-duration: 0.1s; */
+            /* 장면 효과를 얼마만큼(시간) 동안 줄 것인가 */
+            /* transition: all 0.1s; */
+            transition: font-size 1s, transform 0.1s;
+            transition-delay: 0.1s;
+        }
+        a:active {
+            transform: translate(20px, 20px);
+            /* 장면효과를 어디 위치에서 시작되게 줄 것인가 */
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">Click</a>
+</body>
+</html>

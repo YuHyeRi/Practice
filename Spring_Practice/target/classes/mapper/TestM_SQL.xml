@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="testM">
+
+	<select id="getMCnt" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*) AS CNT
+		FROM M1
+		WHERE M_DEL = 1
+		<if test="searchTxt != null and searchTxt != ''">
+			<choose>
+				<when test="searchGbn eq 0">
+					AND M_ID LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn eq 1">
+					AND M_NM LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn eq 2">
+					AND M_PHONE LIKE '%' || #{searchTxt} || '%'
+				</when>
+			</choose>
+		</if>
+	</select>
+
+	<select id="getMList" parameterType="hashmap" resultType="hashmap">
+		SELECT M.M_NO, M.M_ID, M.M_NM, M.M_PHONE, M.M_JOIN, M.M_IMG
+		FROM ( SELECT M_NO, M_ID, M_NM, M_PHONE, 
+				TO_CHAR(M_JOIN, 'YYYY-MM-DD') AS M_JOIN, M_IMG,
+				ROW_NUMBER() OVER(ORDER BY M_NO DESC) AS RNUM
+				FROM M1
+				WHERE M_DEL = 1
+				<if test="searchTxt != null and searchTxt != ''">
+					<choose>
+						<when test="searchGbn eq 0">
+							AND M_ID LIKE '%' || #{searchTxt} || '%'
+						</when>
+						<when test="searchGbn eq 1">
+							AND M_NM LIKE '%' || #{searchTxt} || '%'
+						</when>
+						<when test="searchGbn eq 2">
+							AND M_PHONE LIKE '%' || #{searchTxt} || '%'
+						</when>
+					</choose>
+				</if>
+				) M
+		WHERE M.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	
+	<select id="getM" parameterType="hashmap" resultType="hashmap">
+		SELECT M_NO, M_ID, M_PW, M_NM, M_PHONE, TO_CHAR(M_JOIN, 'YYYY-MM-DD') AS M_JOIN, M_IMG
+		FROM M1
+		WHERE 1=1
+		AND M_NO = #{no}
+	</select>
+	
+	<insert id="addTestM" parameterType="hashmap">
+		INSERT INTO M1 (M_NO, M_ID, M_PW, M_NM, M_PHONE, M_IMG)
+		VALUES (M1_SEQ.NEXTVAL, #{id}, #{pw}, #{nm}, #{phone}, #{mFile})
+	</insert>
+	
+	<update id="updateTestM" parameterType="hashmap">
+		UPDATE M1 SET M_PW = #{pw},
+					  M_NM = #{nm},
+					  M_PHONE = #{phone},
+					  M_IMG = #{mFile}
+		WHERE M_NO = #{no}
+	</update>
+	
+	<update id="delTestM" parameterType="hashmap">
+		UPDATE M1 SET M_DEL = 0
+		WHERE M_NO = #{no}
+	</update>
+	
+	<select id="getM1IdCheck" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*) AS CNT
+		FROM M1
+		WHERE M_ID = #{id}
+	</select>
+	
+
+</mapper>

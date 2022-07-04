@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            // $('#wrap p:eq(2)').after('<p>after</p>');            // .after : index 2번 다음에 내용을 추가함
+            $('<p>after</p>').insertAfter('#wrap p:eq(2)');         // .insertAfter : 같은뜻
+
+            // $('#wrap p:eq(0)').before('<p>before</p>');             // .before : index 0번 전에 내용을 추가함
+            $('<p>before</p>').insertBefore('#wrap p:eq(0)');          // .insertBefore : 같은뜻
+
+            $('#wrap').append('<p>append</p>');         // 부모요소 기준 맨 아래 추가
+            $('#wrap').prepend('<p>prepend</p>');       // 부모요소 기준 맨 위에 추가
+
+            // $('#btn').click(function() {                    // 버튼 클릭하면
+            //     $('#wrap').append('<p>추가한 텍스트</p>');           // 해당 부모요소 맨 아래에 '추가한 텍스트' text 계속 추가 
+            // })
+            $('#btn').on('click', function() {                  // 위와 같은 코드
+                $('#wrap').append('<p>추가한 텍스트</p>');
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p>내용1</p>
+        <p>내용2</p>
+        <p>내용3</p>
+    </div>
+    <button id="btn">클릭</button>
+</body>
+</html>

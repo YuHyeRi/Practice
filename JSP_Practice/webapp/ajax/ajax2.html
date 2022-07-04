@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(function() {		// 페이지 로딩 후 자동실행되는 코드
+		$("#btnLogin").click(function() {
+			// 아이디와 패스워드 태그에 입력한 값을 가져옴
+			var id=$("#id").val();
+			var pwd=$("#pwd").val();
+			var param="id="+id+"&pwd="+pwd;	// id=kim&pwd=1234 이런식으로 파라미터 구성하게끔
+			// 백그라운드로 실행
+			$.ajax({
+				type : "post",
+				url : "result2.jsp",
+				data : param,				// 여기 data는 서버에 전달되는 파라미터(키값) ==> 보내주는 변수	(밑 data와 다름)	
+				success : function(data){	// 서버의 응답, data:응답테스트(여기서 data는 변수명으로 아무거나 사용해도 OK)
+					$("#div1").html(data);	// 참고로 자바스크립트에서는 변수선언을 하지 않음 (just 변수 그냥 쓰면 OK)
+				}							// data : 실행결과를 받는 변수 ==> 받는 변수
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	아이디 <input id="id"><br>
+	비밀번호 <input type="password" id="pwd"><br>
+	<input type="button" value="확인" id="btnLogin"><br><br>
+	<div id="div1">결과 출력 영역</div>
+</body>
+</html>

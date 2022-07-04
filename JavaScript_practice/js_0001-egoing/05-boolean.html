@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        console.log(
+        Number(true),
+        Number(false));
+        Number('문자'); // NaN        
+        // true와 false는 Number로 형변환을 시키면 < true : 1, false : 0 > 이 나옴
+
+        // false : 숫자 0, 빈문자열, null, undefined, NaN
+        // true : 이 외 모든 것
+
+        // ★★★그냥..암기★★★
+        Number(null); // 0
+        Number(undefined); // NaN
+        Number(0); // false
+        Number('0'); // true
+        Number(''); // false
+        Number(' '); // true
+    </script>
+
+</body>
+</html>

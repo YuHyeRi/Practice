@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('#wrap a[target]').css('color', 'red');
+
+            $('#wrap a[href^=https]').css('color', 'green');      
+            // ^ : ~로 시작하면 (https로 시작하면)
+
+            $('#wrap a[href$=net]').css('color', 'blue');         
+            // $ : ~로 끝나면 (net으로 끝나면)
+
+            $('#wrap a[href*=google]').css('color', 'brown');      
+            // * : ~를 포함하고 있으면 (google을 포함하고 있으면)
+
+            $('#member_f :text').css('background-color', 'salmon');     
+            // ★ f : -> f와 : 사이에 공백이 있어야 함
+            // $('#member_f #user_id').css('background-color', 'salmon');       
+            // 이런식으로 태그를 넣어서 써도 됨
+            
+            $('#member_f :password').css('background-color', 'green');  
+            // ★ f : -> f와 : 사이에 공백이 있어야 함
+
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p><a href="#" target="_blank">아무사이트</a></p>       
+        <!-- target="_blank" : 새 윈도우 창을 열어서, 웹페이지 열기  -->
+        <p><a href="https://naver.com">네이버</a></p>
+        <p><a href="https://daum.net">다음</a></p>
+        <p><a href="https://google.co.kr">구글</a></p>
+    </div>
+
+    <form action="#" id="member_f">
+        <p>
+            <label for="user_id">아이디</label>
+            <input type="text" id="user_id" name="user_id">
+        </p>
+        <p>
+            <label for="user_pw">비밀번호</label>
+            <input type="password" id="user_pw" name="user_pw">
+        </p>
+    </form>
+</body>
+</html>

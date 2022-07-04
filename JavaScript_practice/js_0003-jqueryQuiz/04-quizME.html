@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <style>
+        div {
+            border: 1px solid black;
+            height: 30px;
+        }
+        p {
+            background-color: salmon;
+            width: 100px;
+            height: 30px;
+            margin: 0;
+        }
+    </style>
+    <script>
+        $(function() {
+            $(document).ready(function() {
+                $('#forward').click(function() {
+                $('p').css('margin-left','100px')
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+    <button id='back'>back</button>
+    <button id='forward'>forward</button>
+    <br><br>
+    <div>
+        <p>내용 1</p>
+    </div>
+</body>
+</html>

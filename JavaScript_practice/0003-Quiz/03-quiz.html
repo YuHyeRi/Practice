@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam1</title>
+    <style>
+        label {
+            width: 60px;
+            float: left;
+            /* float : 칸 위치(?) 맞추기!! */
+        }
+    </style>
+</head>
+<body>
+    <h2>예약정보</h2>
+
+    <form action="#" method="POST">
+
+    <ul type="none">
+        <li><label>이름</label><input type="text" pattern="[가-힣]{2,}" required></li><br>
+        <li><label>휴대폰</label><input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required></li><br>
+        <li><label>이메일</label><input type="email" required></li><br>
+        <button type="submit">예약하기</button>
+    </ul>
+
+</form>
+
+</body>
+</html>

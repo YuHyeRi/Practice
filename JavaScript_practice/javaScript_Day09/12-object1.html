@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('.box2').remove();        // .remove : 내용을 완전 삭제
+            $('.box3').empty();         // .empty : 완전 삭제까진 아니고 안의 내용물을 지워버림
+            var copyOjb = $('.box1').children().clone();
+                $('.box3').append(copyOjb);
+        });
+    </script>
+</head>
+<body>
+    <!-- div.box$*3>p*2 -->
+    <div class="box1">
+        <p>내용1</p>
+        <p>내용2</p>
+    </div>
+    <div class="box2">
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+    <div class="box3">
+        <p>내용5</p>
+        <p>내용6</p>
+    </div>
+</body>
+</html>

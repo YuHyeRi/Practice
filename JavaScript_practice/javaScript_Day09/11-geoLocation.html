@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('#geo').on('click', function() {
+                if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(e) {
+                        $('#demo').text(`위도 : ${e.coords.latitude}     경도 : ${e.coords.longitude}`);
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="geo">내 위치 찾기</button>
+    <p id="demo"></p>
+</body>
+</html>

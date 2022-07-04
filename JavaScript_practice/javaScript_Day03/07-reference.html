@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var objA = {
+            val : 40
+        };
+        var objB = objA;
+        console.log(objA.val);  // 40
+        console.log(objB.val);  // 40
+
+        objB.val = 50;
+        console.log(objA.val);  // 50
+        console.log(objB.val);  // 50 (주소를 공유하기 때문에 값이 같아짐)
+
+        var a = 1;
+        var b = 2;
+        console.log(a); // 1
+        console.log(b); // 2
+
+        a = b;
+        console.log(a); // 2
+        console.log(b); // 2
+
+        var a = 5;
+        console.log(a); // 5
+        console.log(b); // 2    (값이 복사된 것이기 때문에 값이 바뀌지 않음)
+
+        const a = {
+            value : 100
+        };
+        const b = {
+            value : 100
+        };
+        console.log(a == b);    // false (저장되는 메모리가 다르기 때문에, 주소가 다르기 때문에)
+        console.log(objA == objB);  // true (얘는 주소를 공유하기 때문에)
+
+    </script>
+</body>
+</html>

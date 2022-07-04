@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <script>
+        $(function() {
+            var arr1 = ['서울', '부산', '대전', '강릉', '부산']
+            var arr2 = ['한국', '미국', '일본', '영국']
+            var obj = {
+                'name' : '부장',
+                'area' : '서울'
+            };
+            var indexNum = $.inArray('부산', arr1);  // inArray : 내가 찾고자하는 배열 내의 아이템이 index가 몇번째인지? / 배열에 특정값이 잇는지
+            console.log(indexNum)// 똑같은 값을 넣어도 (ex.'부산') 앞에 먼저 나온 값만 나옴 (뒷 값은 안찾고 무시함)
+
+            var okArr1 = $.isArray(arr1);    // isArray : 얘가 array인지 아닌지
+            console.log(okArr1)              // array가 맞기 때문에 true
+
+            $.merge(arr2, arr1);     // merge : 앞에 있는 배열에 뒤에 있는 배열을 합침
+            console.log(arr2);      // ["한국", "미국", "일본", "영국", "서울", "부산", "대전", "강릉", "부산"]
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(function() {	// 페이지 로딩 후 자동으로 실행되는 코드
+		$("#button1").click(function() {	// id가 button1인 버튼 클릭시 실행되는 함수
+			var dan = $("#dan").val();		// id가 dan인 태그의 입력값
+			$.ajax({						// 백그라운드(화면이 없음)에서 실행되는 코드
+				url : "result1.jsp",		// 필수요소는 url
+				data : "dan="+dan,
+				success : function(data) {	// success : 콜백함수, 백그라운드 작업 종료 후 실행되는 함수
+					// data변수 : response text 서버의 응답 텍스트
+					$("#result").html(data);	// id가 result인 태그에 html 형식으로 값을 출력하자
+				}
+			});
+			alert("구구단 출력중..");
+		});
+	});
+</script>
+</head>
+<body>
+	<h2>*동기식(Single thread)</h2>
+	<form action="result1.jsp">
+		단 입력 <input type="text" name="dan">
+		<input type="submit" value="입력">
+	</form>
+	<br>
+	<br>
+	<h2>*비동기식(Multi thread)</h2>
+	<!-- form을 쓰지 않음 -->
+	단 입력 <input type="text" id="dan">
+	<input type="button" id="button1" value="입력">
+	<div id="result">결과 출력 영역</div>
+</body>
+</html>

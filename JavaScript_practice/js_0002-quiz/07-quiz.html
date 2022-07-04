@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 음수, 양수 확인하기 -->
+    <input type="text" name="v1" id="v1">
+    <button id='btn'>클릭</button>
+    <div id="content"></div>
+
+    <script>
+        document.querySelector('#btn').addEventListener("click", function() {
+            var num = Number(document.querySelector('#v1').value);
+            var str = "";
+            if(num > 0) {
+                str = '<h2>양수입니다.</h2>';
+            } else if (num < 0) {
+               str = '<h2>음수입니다.</h2>';
+            } else {
+                str = '<h2>0을 입력 하셨습니다.</h2>';
+            }
+            document.querySelector('#content').innerHTML = str;
+        },false);
+    </script>
+</body>
+</html>

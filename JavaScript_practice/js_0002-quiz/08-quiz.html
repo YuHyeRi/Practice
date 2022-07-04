@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 배수 확인하기 -->
+    <input type="text" name="v1" id="v1">
+    <input type="text" name="v1" id="v2">
+    <button id="btn">클릭</button>
+    <div id="content"></div>
+
+    <script>
+        document.querySelector('#btn').addEventListener("click", function() {
+            var num1 = Number(document.querySelector('#v1').value);
+            var num2 = Number(document.querySelector('#v2').value);
+            str = "";
+            if((num1%num2) === 0) {
+                str = `<h2>${num1}은 ${num2}의 배수 입니다.</h2>`;
+            } else {
+                str = `<h2>${num1}은 ${num2}의 배수가 아닙니다.</h2>`;
+            }
+            document.querySelector('#content').innerHTML = str;
+        },false);
+    </script>
+</body>
+</html>

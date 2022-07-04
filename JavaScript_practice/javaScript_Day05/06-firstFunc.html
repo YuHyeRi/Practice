@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수는 object다 !!
+        // 일급함수 조건 -> javaScript 함수는 일급함수다 (=파이썬,고언어 등)
+
+        // 1) 변수나 프로퍼티 값으로 할당 가능
+        var a = function() {
+            return 100;
+        }
+        console.log(a());
+        
+        var b = {}
+        b.func1 = function() {
+            return 200;
+        }
+        console.log(b.func1());
+
+        // 2) 함수를 인자로 전달 가능
+        var c = function(func){
+            func();
+        }
+        c(function() {
+            console.log('이것은 함수 안에서 실행되는 문자열 입니다.')
+        })
+
+        // 3) 함수를 리턴할 수 있음
+        var d = function() {
+            return function() {
+                console.log('리턴된 함수');
+            }
+        };
+    </script>
+</body>
+</html>

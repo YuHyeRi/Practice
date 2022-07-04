@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="val1" name="val1"><br>
+    <input type="text" id="val2" name="val2"><br>
+    <button id="create">구구단 출력</button>
+    <div id="content"></div>
+
+    <script>
+        // 구구단 출력기
+
+        document.querySelector('#create').addEventListener("click", function () {
+            // var val1 = Number(document.querySelector("#val1").value);
+            // var result = "";
+            // for (let index = 1; index < 10; index++) {
+            //     result += `<p> ${val1} * ${index} = ${val1 * index} </p>`;
+            // }
+            // document.querySelector("#content").innerHTML = result;
+
+            var val1 = Number(document.querySelector('#val1').value);
+            var val2 = Number(document.querySelector('#val2').value);
+            var result = '';
+            for (let index1 = val1; index1 <= val2; index1++) {          // 최소값 : val1, 최대값 : val2
+                for (let index2 = 1; index2 < 10; index2++) {
+                result += `<p>${index1} * ${index2} = ${index1 * index2}</p>`;
+                }
+            }
+            document.querySelector('#content').innerHTML = result;
+        }, false);
+    </script>
+
+</body>
+</html>

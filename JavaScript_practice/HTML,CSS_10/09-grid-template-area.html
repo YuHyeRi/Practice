@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./basic-grid.css">
+    <style>
+        .grid-container {
+            display: grid;
+            grid: 1rem;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-areas:
+                'header header header'
+                'sidebar-a main sidebar-b'
+                'footer footer footer';
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .sidebar-a {
+            grid-area: sidebar-a;
+        }
+
+        .sidebar-b {
+            grid-area: sidebar-b;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header grid-item">header</div>
+        <div class="sidebar-a grid-item">sidebar-a</div>
+        <div class="sidebar-b grid-item">sidebar-b</div>
+        <div class="main grid-item">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex, eos maiores temporibus libero mollitia sed
+            quis voluptatem doloribus cum, voluptates consequuntur aperiam tenetur nulla assumenda incidunt, corrupti
+            perferendis esse eaque?
+        </div>
+        <div class="footer grid-item">footer</div>
+    </div>
+</body>
+</html>

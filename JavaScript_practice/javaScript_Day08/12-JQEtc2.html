@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('#wrap p:hidden').css(
+                {'display' : 'block',
+                 'background' : 'purple',
+                 'color' : 'white'});
+                 
+            var z1 = $('#zone1 :selected').val();     // .val : selected 된 것 value값 가지고 오기
+            console.log(z1);
+            var z2 = $('#zone2 :checked').val();      // .val : checked 된 것 value값 가지고 오기
+            console.log(z2);
+            var z3 = $('#zone3 :checked').val();      // .val : checked 된 것 value값 가지고 오기
+            console.log(z3);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p>내용1</p>
+        <p style="display: none;">내용2</p>
+        <p>내용3</p>
+    </div>
+    <form action="#">
+        <p id="zone1">
+            <select name="course" id="course">
+                <option value="opt1">옵션1</option>
+                <option value="opt2" selected>옵션2</option>
+                <option value="opt3">옵션3</option>
+            </select>
+        </p>
+        <p id="zone2">
+            <input type="checkbox" name="hobby1" id="hobby1" value="독서">독서
+            <input type="checkbox" name="hobby1" id="hobby2" value="등산">등산
+            <input type="checkbox" name="hobby1" id="hobby3" value="영화" checked>영화
+        </p>
+        <p id="zone3">
+            <input type="radio" name="gender" id="" value="male">남성
+            <input type="radio" name="gender" id="" value="female"checked>여성
+        </p>
+    </form>
+</body>
+</html>

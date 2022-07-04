@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 예외 처리(Exception Handling)
+        
+        try {       // try : 예외발생될거라는 의심가는 부분을 묶어놓은 블럭
+            adddlet('welcome guest!');
+        } catch(err) {      // catch : 예외가 터졌을 시 실행되는 로직
+            // console.log(err.message);
+            console.log('에러가 발생했습니다.');
+        } finally {         // finally : 예외 유무 상관없이 무조건 실행되는 로직
+            console.log('에러가 터지든말든 난 무조건 실행!')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('.btn1').click(function() {
+                $('.btn1').parent().next().css({'color' : 'salmon'});
+            });
+            $('.btn2').on( {                       // on : 복수개 이벤트 적용시 click 대신 'on'
+                "mouseover focus" : function() {
+                    $('.btn2').parent().next().css({'color' : 'blue'});
+                },
+                "mouseover blur" : function() {
+                    $('.btn2').parent().next().css({'color' : 'gray'});
+                }
+            })
+            // $('.btn1').click();         // click() : 실행하자마자 강제로 실행!!!
+            // $('.btn2').trigger('mouseover');    // trigger('') : 복수일 경우, 실행하자마자 항사 마우스오버
+            $('.btn1').off('click');        // .off('click') : 이벤트 삭제
+            $('.btn2').off('mouseover focus');  // .off('') : 복수개의 이벤트 삭제
+        });
+    </script>
+</head>
+<body>
+    <p><button class="btn1">버튼1</button></p>
+    <p>내용1</p>
+    <p><button class="btn2">버튼2</button></p>
+    <p>내용2</p>
+</body>
+</html>

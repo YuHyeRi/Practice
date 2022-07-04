@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" method="get">
+        <ul>
+            <li><label>입력1 : <input type="text" pattern="ABC" required></label></li>
+            <li><label>입력2 : <input type="text" pattern="ABC|CBA" required></label></li>
+            <li><lable>입력3 : <input type="text" pattern="[a-z]{8,12}" required></lable></li>
+
+            <!-- ★★★ 많이 쓰임! [글자범위]{최소 최대 반복횟수,8~12글자 사이 입력}
+
+            {n} : n번 반복
+            {n,m} : n번 이상 m번 이하
+            {n,} : n번 이상
+            [a-z] : a 부터 z 까지 글자 중 하나
+            [^a-z] : a부터 z까지 글자를 제외한 나머지 -->
+
+            <button type="submit">등록</button>
+        </ul>
+    </form>
+
+</body>
+
+</html>

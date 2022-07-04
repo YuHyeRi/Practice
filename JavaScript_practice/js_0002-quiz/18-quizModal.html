@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #modalButton {
+            padding: 0.5rem 1rem;
+            background-color: salmon;
+            color: white;
+            cursor: pointer;
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            padding: 1.5rem;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            opacity: 0.5;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        #modalInner {
+            max-width: 30rem;
+            padding: 1.5rem;
+            background-color: white;
+            color: gray;
+            box-shadow: 0 3px 7px 1px;
+        }
+    </style>
+</head>
+<body>
+    <button id='modalButton'>클릭</button>
+    <div id="modal">
+        <div id="modalInner">This is modal chang.</div>
+    </div>
+
+    <script>
+        document.querySelector('#modalButton').addEventListener("click", function() {
+            document.querySelector('#modal').style.display = "flex";
+        },false);
+        document.querySelector('#modalInner').addEventListener("click", function() {
+            document.querySelector("#modal").style.display = "none";
+        },false);
+    </script>
+</body>
+</html>

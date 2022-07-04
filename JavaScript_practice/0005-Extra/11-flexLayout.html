@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+           display: flex;
+           flex-direction: row;
+           min-height: 100vh;
+           margin: 0;
+       }
+       nav {
+           background: rosybrown;
+           flex-grow: 2;
+       }
+       .col-2 {
+           display: flex;
+           flex-direction: column;
+           flex-grow: 10;
+       }
+       main {
+           display: flex;
+       }
+       main > article {
+           flex-grow: 1;
+           min-height: 60vh;
+           /* 최소 높이 60 까지는 차지해라 */
+       }
+       header, footer {
+           background: silver;
+           height: 20vh;
+       }
+       header, footer, article, nav {
+           padding: 1em;
+       }
+   </style>
+</head>
+<body>
+    <nav>nav</nav>
+    <div class="col-2">
+        <header>header</header>
+        <main class="content">
+            <article>article</article>
+        </main>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

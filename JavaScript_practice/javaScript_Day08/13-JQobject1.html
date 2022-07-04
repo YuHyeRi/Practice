@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            var srcVal = $('#sec_1 img').attr('src');       // attr : 엘리먼트 안의 속성을 추가, 변경, 가져올때 씀
+            console.log(srcVal);                            // ../0003-quiz/img/img1.jpg
+
+            $('#sec_1 img').attr(                           // attr : 이용해서 속성값 추가, 변경함
+                {
+                    'border' : 6,
+                    'alt' : '오리',
+                    'src' : '../0003-quiz/img/img2.jpg'     // 이미지도 변경할 수 있음!
+                }
+            )
+            $('#sec_1 img').removeAttr('border');       // removeAttr : 원하는 속성 삭제가능!
+            
+        })
+    </script>
+</head>
+<body>
+    <h1><strong>객체 조작 및 생성</strong></h1>
+    <section id="sec_1">
+        <h2></h2>
+        <p><img src="../0003-quiz/img/img1.jpg" alt=""></p>
+    </section>
+</body>
+</html>

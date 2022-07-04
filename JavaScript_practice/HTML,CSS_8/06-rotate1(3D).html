@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            border: 1px solid gray;
+            margin: 20px;
+        }
+        .pers {
+            perspective: 200px;
+        }
+        .rotate1:hover {
+            transform: rotate(20deg);
+        }
+        .rotate2:hover {
+            transform: rotate(-40deg);
+        }
+        .rotatex {
+            transform: rotateX(45deg);
+        }
+        .rotatey {
+            transform: rotateY(45deg);
+        }
+        .rotatez {
+            transform: rotateZ(45deg);
+        }
+        .rotatexyz {
+            transform: rotate3d(2.5, 1.2, -1.5, 45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="rotate1"><img src="../0001-exam/01-exam.png" alt=""></div>
+    </div>
+    <div class="container">
+        <div class="rotate2"><img src="../0001-exam/01-exam.png" alt=""></div>
+    </div>
+    <div class="container pers">
+        <div class="rotatex"><img src="../0001-exam/01-exam.png" alt=""></div>
+    </div>
+    <div class="container pers">
+        <div class="rotatey"><img src="../0001-exam/01-exam.png" alt=""></div>
+    </div>
+    <div class="container pers">
+        <div class="rotatez"><img src="../0001-exam/01-exam.png" alt=""></div>
+    </div>
+    <div class="container pers">
+        <div class="rotatexyz"><img src="../0001-exam/01-exam.png" alt=""></div>
+    </div>
+</body>
+
+</html>

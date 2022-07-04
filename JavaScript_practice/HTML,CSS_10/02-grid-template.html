@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./basic-grid.css">
+    <style>
+        .grid-container {
+            display: grid;
+            height: 80vh;
+            /* grid-template-columns: 1fr 300px 1fr; */
+            /* 픽셀로 지정한 곳만 고정되고 나머지는 유동적으로 움직인다. */
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 2fr);
+
+            /* grid-template-columns: repeat(3, 1fr); */
+            /* grid-template-rows: repeat(3, minmax(100px, auto)); */
+            /* minmax : 최소 100px 유지, 최대 컨텐츠 크기에 맞춰서 라는 뜻 (최소값, 최대값=auto로 많이줌)*/
+
+            /* grid-template-columns: minmax(100px, 200px) 200px 200px; */
+            /* grid-template-rows: repeat(3,1fr); */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+</body>
+</html>

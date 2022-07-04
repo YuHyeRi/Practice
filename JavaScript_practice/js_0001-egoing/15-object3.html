@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // for... in문 
+
+        const mike = {
+            name : 'mike',
+            age : 31,
+        };
+
+        for(x in mike) {            // x는 mike가 가지고 있는 프로포티 값을 의미, 임의로 써도 상관 없음
+            console.log(x);     // name, age
+            console.log(mike[x]);   // mike, 31
+        }
+    </script>
+
+</body>
+</html>

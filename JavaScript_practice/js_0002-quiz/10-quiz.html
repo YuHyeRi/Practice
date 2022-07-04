@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 가위바위보 게임 -->
+    <input type="number" id="game" name="game">
+    <button id="btn">가위바위보</button>
+    <div id="content"></div>
+
+    <script>
+        // 가위(1), 바위(2), 보(3)
+        document.querySelector('#btn').addEventListener("click", function() {
+            var user = Number(document.querySelector('#game').value);
+            var computer = Math.floor(Math.random()*3+1);       // 숫자를 랜덤하게 3 이내로 뽑아야 하니까!
+            var str = "";
+            if (user === computer) {
+                str = "당신은 비겼습니다."
+            } else if (user === 1) {
+                str = (computer === 2)? "<h2>당신이 졌습니다.</h2>":"<h2>당신이 이겼습니다.</h2>";
+            } else if (user === 2) {
+                str = (computer === 3)? "<h2>당신이 졌습니다.</h2>":"<h2>당신이 이겼습니다.</h2>";
+            } else if (user === 3) {
+                str = (computer === 1)? "<h2>당신이 졌습니다.</h2>":"<h2>당신이 이겼습니다.</h2>";
+            }
+            document.querySelector('#content').innerHTML = str;
+        },false);
+    </script>
+</body>
+</html>

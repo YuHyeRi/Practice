@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textarea : 멀티장문쓰기</title>
+</head>
+
+<body>
+
+    <!-- textarea : 장문쓰기(ex. 메일을 쓸 수 있는 창) -->
+
+    <form action="../0520/03-formresult1.html" method="post">
+
+        <ul>
+            <li><textarea name="longtext" id="" cols="30" rows="10" placeholder="내용을 입력하세요."></textarea></li>
+            <!-- cols : 가로길이(문자기준),  rows : 세로길이(몇줄) -->
+            <!-- textarea에서는 pattern이 지원 안됨(보안에 취약함), 때문에 요즘 잘 안씀 -->
+
+            <li><progress value="50" max="100"></progress></li>
+
+            <li><meter value="50" min="0" max="100" low="10" high="90"></meter></li>
+            <!-- min 최소값이 있음, low나 high 값이 오르내리면 색이 바뀜 -->
+
+            <button type="submit">등록</button>
+        </ul>
+
+    </form>
+</body>
+
+</html>

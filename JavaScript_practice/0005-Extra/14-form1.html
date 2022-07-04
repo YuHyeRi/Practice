@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-nav {
+            display: flex;
+            background: slategray;
+            color: white;
+            border-radius: 3px;
+            padding: 1em;
+        }
+        .main-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-grow: 3;
+        }
+        .main-nav li {
+            margin-right: 2em;
+        }
+        .main-nav form {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 0.2;
+        }
+        .main-nav input {
+            flex-grow: 1;
+        }
+        .main-nav button {
+            background: white;
+            border: 1px solid gray;
+            border-radius: 3px;
+            padding: 0 1em;
+            margin-left: 0.5em;
+        }
+        @media (max-width:560px) {
+            .main-nav {
+                display: flex;
+                flex-direction: column;
+            }
+            .main-nav ul {
+                flex-direction: row;
+                margin-bottom: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li>logo</li>
+            <li>home</li>
+            <li>products</li>
+            <li>service</li>
+        </ul>
+        <form action="#">
+            <input type="text" placeholder="상품을 검색하세요.">
+            <button>search</button>
+        </form>
+    </nav>
+</body>
+</html>

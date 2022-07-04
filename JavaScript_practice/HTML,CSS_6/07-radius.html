@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            border: 5px solid gray;
+        }
+        .radius1 {
+            border-radius: 1.5em;
+        }
+        .radius2 {
+            border-radius: 3em / 5em;
+        }
+        .radius3 {
+            border-radius: 10px 30px 60px 100px;
+            /* top-left > top-right > bottom-right > bottom-left */
+        }
+        .radius4 {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="radius1"></div>
+    <div class="radius2"></div>
+    <div class="radius3"></div>
+    <div class="radius4"></div>
+</body>
+</html>

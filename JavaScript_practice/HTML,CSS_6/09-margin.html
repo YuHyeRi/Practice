@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* margin : 바깥여백 */
+        div {
+            width: 200px;
+            height: 100px;
+            border: 1px solid gray;
+            background-color: salmon;
+        }
+        .box-margin1 {
+            margin: 5% 0; 
+            /* top margin > bottom margin */
+        }
+        .box-margin2 {
+            margin: 10px 30px 20px;
+            /* top > right,left > bottom */
+        }
+        .box-margin2 {
+            margin: 20px 30px 10px 10px;
+            /* top > right > bottom > left */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-margin1">box margin</div>
+    <div class="box-margin2">box margin</div>
+    <div class="box-margin3">box margin</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('#sec_1 p').html('<a href="#">앵커태그</a>');      
+            // innerHTML을 대체함
+
+            console.log($('#sec_1 p').html());      
+            // console 출력
+
+            $('#sec_2 p').text('이것은 innerText 입니다.');      
+            // innerText을 대체함
+
+            console.log($('#sec_2 p').text());      
+            // console 출력
+
+            $('#val').val('3');         
+            // input창에 3이란 숫자가 들어가있음
+
+            console.log($('#val').val());       
+            // console에 3 출력
+        });
+    </script>
+</head>
+<body>
+    <div id="sec_1">
+        <p></p>
+    </div>
+    <div id="sec_2">
+        <p></p>
+    </div>
+    <input type="text" id="val" name="val">
+</body>
+</html>

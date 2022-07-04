@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 기본형식
+        // function sayHello(name) {               // sayHello:함수명 / (name):매개변수 (없을수도, 여러개 있을수도..)
+        // console.log(`Hello, &{name}`);}
+        
+        // 매개변수가 없는 함수
+        function showError() {
+            alert('에러가 발생했습니다.');}
+        showError();    // 이제 이렇게 한줄만 쓰면 위의 기능이 실행됨
+
+        // 매개변수가 있는 함수
+       function sayHello(name) {
+           const i = `Hello, ${name}`;
+           console.log(i);}
+       sayHello('jake');
+
+       // 함수 속에 조건문 넣기
+       function sayHello2(name) {
+           let message = `hello`;
+           if(name) {
+               message = `hello, ${name}`;}
+            // message += name;  // 위 코드와 같은 코드
+           console.log(message);}
+
+       // 함수명은 보기 쉽게 작성
+       // showError : 에러를 보여줌
+       // getName : 이름을 얻어옴
+       // creatUserData : 유저 데이터 생성
+       // checkLogin : 로그인 여부 체크
+    </script>
+
+</body>
+</html>

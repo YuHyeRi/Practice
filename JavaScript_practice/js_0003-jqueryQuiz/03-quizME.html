@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+            font-size: 1.5rem;
+            border: 1px solid black;
+        }
+        p {
+            margin-top: 8px;
+            margin-left: 10px;
+        }
+    </style>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $(document).ready(function() {          // jQuery의 이벤트 메서드 중 하나 (복수개의 이벤트도 가능)
+                $('#menu1').hover(function() {
+                    $('#menu1').css('background-color','salmon');       // hover 했을 때
+                }, function() {
+                    $('#menu1').css('background-color','white');        // 마우스를 벗어났을 때
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="menu1"><p>menu1</p></div>
+    <div><p>menu2</p></div>
+    <div><p>menu3</p></div>
+    <div><p>menu4</p></div>
+</body>
+</html>

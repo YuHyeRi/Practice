@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ★ hosting : 끌어올려주다★
+        // ★ 어디에 선언했냐에 상관 없이 항상 제일 위로 선언을 끌어올려주는 것★
+        // ★ 변수를 통해 선언하는 식이나 값은 호이스팅 X, 함수표현식형태도 호이스팅 X, 함수선언문방식만 호이스팅 적용 O
+        console.log(a());
+        console.log(b());
+        console.log(c());
+
+        function a() {
+            return 'returnA';
+        }
+        var b = function b() {
+            return 'returnB';       // 변수를 통해 선언했으니 호이스팅 X
+        };
+        var c = function() {
+            return 'returnC';       // 변수를 통해 선언했으니 호이스팅 X
+        };
+    </script>
+</body>
+</html>

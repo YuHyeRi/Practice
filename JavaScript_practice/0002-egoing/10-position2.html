@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+    /* 
+    absolute 의 경우, 부모가 static이 아닐 경우(ex. relative), 그걸 기준으로 함
+    즉, 모든 부모가 기본값 static 이라면 제일 상위인 html 기준으로 위치를 지정하는 것!!!!!! 
+    또한, 위치를 지정하는 순간 부모와의 연(?)이 끊기기 때문에 크기는 자기 컨텐츠만해진다.
+    그리고 부모 역시도 자식을 없는 셈 친다.
+    */
+        .parent, .other {
+            border: 3px solid salmon;
+        }
+
+        .me {
+            background-color: slategray;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="other">other</div>
+    <div class="parent">
+        parent
+        <div class="me">me</div>
+    </div>
+</body>
+
+</html>

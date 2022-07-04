@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var arr1 = ['a', 'b', 'c'];
+        var arr2 = {
+            '0' : 'a',
+            '1' : 'b',
+            '2' : 'c',
+            length : 3
+        };
+
+        console.log(arr1);
+        console.log(arr2);
+
+        // 유사배열 객체 : object를 사용해도 배열처럼 보여지게 함
+        // 1) length가 반드시 있어야함 2) index번호가 0번부터 시작해서 1씩증가해야함
+        
+        Array.prototype.push.apply(arr2, ['d']);
+        console.log(arr2);
+    </script>
+
+</body>
+</html>

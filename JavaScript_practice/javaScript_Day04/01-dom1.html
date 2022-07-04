@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // script를 위에 두어도 실행 되게 만들어주는 메소드
+
+        // 방법 : 1 -> window.onload = function() {};
+        window.onload = function() {
+        document.querySelectorAll('p')[0].innerHTML= "안녕하세요1";
+        };
+
+        // 방법 : 2
+        window.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('p')[1].innerHTML = "안녕하세요2";
+        });
+    </script>
+
+    <div>
+        <ul>
+            <li>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

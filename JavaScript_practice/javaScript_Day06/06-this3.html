@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 객체 바로 밑 메소드에서 this를 사용하는 경우
+        // this == 해당 객체
+        let obj1 = {
+            a : 123,
+            b : "abc",
+            c: function() {
+                console.log(this.a);
+            }
+        }
+        obj1.c();   // 123 출력
+
+        // 2. 객체 바로 밑 메소드 안 함수에서 this를 사용하는 경우
+        //  --> 내부 함수를 메소드에서 사용하는 경우
+        let obj2 = {
+            a : 123,
+            b : "abc",
+            c: function() {
+                function a() {
+                    console.log(this.a);
+                }
+            }
+        }
+
+        // 3. 객체에 동일한 this를 참조하기 위한 방법
+        
+    </script>
+</body>
+</html>

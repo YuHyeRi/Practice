@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <script>     
+    $(function () {
+        var arr1 = [
+            {"area": "서울", "name": "대리"},
+            {"area": "부산", "name": "부장"},
+            {"area": "강릉", "name": "과장"},
+            {"area": "천안", "name": "이사"}]
+
+            //   var arr2 = $.map(arr1, function(a) {
+            //       console.log(a)       // 출력하면 각각 4개 object가 나옴 (서울-대리 / 부산-부장 / 강릉-과장 / 천안-이사)
+            //    if(a.area === "서울") { // 그 4개 object중에 area==서울 인 애들을 콘솔에 출력
+            //       return a;
+            //   }
+            //})
+            // console.log(arr2);
+
+            var arr3 = $.grep(arr1, function(a) {
+                if(a.area === "부산") {
+                    return true;
+                } else {
+                    return false;
+                }
+                // return (a.area === "부산");
+            });
+            console.log(arr3);
+        });
+    </script>
+
+</body>
+</html>

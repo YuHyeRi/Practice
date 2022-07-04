@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="image" src="../0003-quiz/img/img1.jpg" alt="nothing" width="" height="">
+    <p id="p1"></p>
+
+    <script>
+        // 1. getAttribute : 속성 값 알려줌
+        // 2. setAttribute : 속성, 속성값 추가
+        // 3. removeAttribute : 속성값 삭제
+        // 4. hasAttribute : 해당 속성값 존재여부 확인
+
+        // 속성값 알기 ver.1
+        document.querySelector('#p1').innerText = document.querySelector('#image').src;
+        document.querySelector('#p1').innerText = document.querySelector('#image').alt;
+        document.querySelector('#p1').innerText = document.querySelector('#image').id;
+
+        // 속성값 알기 ver.2 (배열로 접근)
+        document.querySelector('#p1').innerText = document.querySelector('#image').attributes[0].name;
+        document.querySelector('#p1').innerText = document.querySelector('#image').attributes[0].value;
+
+        // 특정 속성값을 변경하고 싶을 때
+        document.querySelector('#image').src = "../0003-quiz/img/img2.jpg";
+
+        // getAttribute : 속성 값 알려줌
+        document.querySelector('#p1').innerText = document.querySelector('#image').getAttribute('id');
+
+        // setAttribute : 속성, 속성값을 추가하고 싶을 때
+        document.querySelector('#image').setAttribute('width', '400px');
+        document.querySelector('#image').setAttribute('height', '300px');
+
+        // removeAttribute : 속성 값을 삭제하고 싶을 때
+        document.querySelector('#image').removeAttribute('alt');
+
+        // hasAttribute : 해당 속성값 존재여부 확인
+        console.log(document.querySelector('#image').hasAttribute('width'));    // 존재하니까 true
+    </script>
+</body>
+</html>

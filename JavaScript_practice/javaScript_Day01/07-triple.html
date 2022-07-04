@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var age = prompt('나이를 입력하세요.');
+        age = Number(age);
+        var result = (age > 19)? '입장하셔도 좋습니다.': '이 사이트는 성인만 입장 가능합니다.';
+        alert(result);
+
+        var score = prompt('점수를 입력하세요.', '1 ~ 10');
+        score = Number(score);
+        var result = (score < 3)?'C등급' : (score < 6)?'B등급':'A등급';
+        console.log(`당신의 등급은 ${result} 입니다.`);
+    </script>
+
+</body>
+</html>

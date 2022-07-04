@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab {
+            display: flex;
+            border : 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab button {
+            background-color: #f1f1f1;
+            border: none;
+            cursor : pointer;
+            padding :14px 16px;
+            font-size : 17px;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tabcontent {
+            display: none;
+            padding : 6px 12px;
+            border : 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks" id="tab1">탭메뉴1</button>
+        <button class="tablinks" id="tab2">탭메뉴2</button>
+        <button class="tablinks" id="tab3">탭메뉴3</button>
+    </div>
+
+    <div id="tab1-content" class="tabcontent">
+        <h3>탭메뉴1</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque sapiente voluptatibus dicta pariatur, nisi doloribus consectetur sunt similique ullam assumenda ipsa qui, aut eius laudantium laborum? Ea, culpa facilis. Error!</p>
+    </div>
+    <div id="tab2-content" class="tabcontent">
+        <h3>탭메뉴2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi illum obcaecati officia vel qui similique, nobis quae necessitatibus officiis animi amet eaque dolore dolores reprehenderit id eum omnis eos. Molestiae.</p>
+    </div>
+    <div id="tab3-content" class="tabcontent">
+        <h3>탭메뉴3</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates iusto maxime molestiae modi nisi autem earum minima vitae officia hic possimus nostrum, ea reiciendis voluptatibus sequi maiores nulla debitis omnis.</p>
+    </div>
+    <script>
+        const tabFunction = function(tab){
+            var tabcontent = document.getElementsByClassName("tabcontent");
+            var tablinks = document.getElementsByClassName("tablinks");
+            for (let index = 0; index < tablinks.length; index++) {
+                tabcontent[index].style.display = "none";
+                tablinks[index].style.backgroundColor = "#f1f1f1";
+            }
+            document.getElementById(`${tab}-content`).style.display = "block";
+            document.getElementById(tab).style.backgroundColor = "#ccc";
+        }
+        document.getElementById("tab1").addEventListener("mouseover",function(){tabFunction("tab1");},false);
+        document.getElementById("tab2").addEventListener("mouseover",function(){tabFunction("tab2");},false);
+        document.getElementById("tab3").addEventListener("mouseover",function(){tabFunction("tab3");},false);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="sample">
+        <li>목록1</li>
+        <li>목록2</li>
+        <li>목록3</li>
+        <li>목록4</li>
+    </ul>
+    <script>
+        var x = {  //객체
+            el1 : document.getElementsByClassName("sample")[0],
+            func1 : function(){
+                // document.getElementsByClassName("sample")[0].firstElementChild.style.color="red";
+                this.el1.firstElementChild.style.color = "blue";
+            }
+        }
+        x.func1(); // this = x
+    </script>
+</body>
+</html>

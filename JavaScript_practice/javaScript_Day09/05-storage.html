@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // localStorage : 브라우저가 꺼져도 데이터는 살아있음 (clear, remove 등을 써서 지워줄수 있음)
+        // sessionStorage : 꺼지면 데이터도 리셋, 사라짐 (약간 보안성이 있는 부분, ex)자기개인정보라던지..)
+
+        localStorage.clear();
+        cat = localStorage.getItem('my cat');
+        console.log(cat);
+
+        let doc1 = sessionStorage.getItem('지나 dog');
+        let doc2 = sessionStorage.getItem('창환 dog');
+        console.log(doc1, doc2);
+
+        sessionStorage.removeItem('지나 dog')
+        sessionStorage.removeItem('창환 dog')
+        sessionStorage.clear();
+        doc1 = sessionStorage.getItem('지나 dog');
+        doc2 = sessionStorage.getItem('창환 dog');
+        console.log(doc1, doc2);
+    </script>
+</body>
+</html>

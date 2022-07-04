@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul1">
+        <!-- label for = ''의 값과 input id = ''의 값을 일치시키면 연계된다 -->
+        <!-- 그렇게 되면 label의 텍스트를 클릭하면 input 속성값의 입력창에 자동으로 커서가 생성됨 -->
+        <!-- 보통 radio, checkbox 에 많이 사용됨 -->
+        <li><label for="ch1">아이템1</label><input type="checkbox" name="c1" id="ch1"></li>
+        <li><label for="ch2">아이템2</label><input type="checkbox" name="c1" id="ch2"></li>
+        <li><label for="ch3">아이템3</label><input type="checkbox" name="c1" id="ch3"></li>
+        <li><label for="ch4">아이템4</label><input type="checkbox" name="c1" id="ch4"></li>
+        <li><label for="ch5">아이템5</label><input type="checkbox" name="c1" id="ch5"></li>
+    </ul>
+    <ul id="ul2">
+        <li><label for="ch6">아이템6</label><input type="checkbox" name="c1" id="ch6"></li>
+        <li><label for="ch7">아이템7</label><input type="checkbox" name="c1" id="ch7"></li>
+        <li><label for="ch8">아이템8</label><input type="checkbox" name="c1" id="ch8"></li>
+        <li><label for="ch9">아이템9</label><input type="checkbox" name="c1" id="ch9"></li>
+        <li><label for="ch10">아이템10</label><input type="checkbox" name="c1" id="ch10"></li>
+    </ul>
+    <button id="btn1" class="btnEvent">ul1위에서ul2위로</button>
+    <button id="btn2" class="btnEvent">ul1위에서ul2아래로</button><br>
+    <button id="btn3" class="btnEvent">ul1아래서ul2위로</button>
+    <button id="btn4" class="btnEvent">ul1아래서ul2아래로</button><br>
+    <button id="btn5" class="btnEvent">ul2위에서ul1위로</button>
+    <button id="btn6" class="btnEvent">ul2위에서ul1아래로</button><br>
+    <button id="btn7" class="btnEvent">ul2아래서ul1위로</button>
+    <button id="btn8" class="btnEvent">ul2아래서ul1아래로</button><br>
+    <button id="btn9" class="btnEvent">삭제</button><br>
+    <input type="text" name="text" id="text"><button id="btn10" class="btnEvent">수정</button>
+
+    <script> 
+        document.querySelector('#btn1').addEventListener("click", function () {
+            const f1 = document.querySelector('#ul1').firstElementChild;
+            document.querySelector('#ul2').prepend(f1);
+        }, false);
+
+        document.querySelector('#btn2').addEventListener("click", function () {
+            const f2 = document.querySelector('#ul1').firstElementChild;
+            document.querySelector('#ul2').append(f2);
+        }, false);
+
+        document.querySelector('#btn3').addEventListener("click", function () {
+            const f3 = document.querySelector('#ul1').lastElementChild;
+            document.querySelector('#ul2').prepend(f3);
+        }, false);
+
+        document.querySelector('#btn4').addEventListener("click", function () {
+            const f4 = document.querySelector('#ul1').lastElementChild;
+            document.querySelector('#ul2').append(f4);
+        }, false);
+
+        document.querySelector('#btn5').addEventListener("click", function () {
+            const f5 = document.querySelector('#ul2').firstElementChild;
+            document.querySelector('#ul1').prepend(f5);
+        }, false);
+
+        document.querySelector('#btn6').addEventListener("click", function () {
+            const f6 = document.querySelector('#ul2').firstElementChild;
+            document.querySelector('#ul1').append(f6);
+        }, false);
+
+        document.querySelector('#btn7').addEventListener("click", function () {
+            const f7 = document.querySelector('#ul2').lastElementChild;
+            document.querySelector('#ul1').prepend(f7);
+        }, false);
+
+        document.querySelector('#btn8').addEventListener("click", function () {
+            const f8 = document.querySelector('#ul2').lastElementChild;
+            document.querySelector('#ul1').append(f8);
+        }, false);
+
+        document.querySelector('#btn9').addEventListener("click", function () {
+            // const input = document.querySelectorAll("input[name='c1']");
+            const input = document.querySelectorAll('input[type="checkbox"]');      // 다른 input이 있으니 구분해주기
+            for (const key in input) {
+                if (input[key].checked) {
+                    input[key].parentElement.remove();                              // input의 부모태그인 li를 삭제함
+                }
+            }
+        }, false);
+
+        document.querySelector('#btn10').addEventListener("click", function () {
+            var input = document.querySelectorAll('input[type="checkbox"]');
+            var text = document.querySelector('#text').value;
+            for (const key in input) {
+                if (input[key].checked) {
+                    input[key].previousElementSibling.innerHTML = text;
+                    // input[key].parentElement.firstChild.remove();       // 텍스트 먼저 지워주고 (input이 label안에 있을경우)
+                    // input[key].before(text);                            // 그리고 삽입
+                }
+            }
+        }, false);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes change-bg {
+            from {
+                background-color: salmon;
+                border: 1px solid salmon;
+            }
+            to {
+                background-color: lightslategray;
+                border: 1px solid lightslategray;
+                border-radius: 50%;
+            }
+        }
+        /* from, to 대신 0%, 50%, 100% 로 두게 되면 3단계로 변화도 가능하다. */
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: salmon;
+            border: 1px solid salmon;
+        }
+        div:hover {
+            animation-name: change-bg;
+            animation-duration: 3s;    
+            animation-direction: alternate-reverse;       
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width : 500px;
+            margin : 20px auto;
+        }
+        h1 {
+            font-size : 2.5em;
+            text-align: center;
+        }
+        form {
+            margin-top : 55px;
+        }
+        input[type="text"]{
+            float : left;
+            width : 300px;
+            padding : 12px;
+            border : none;
+            border-bottom : 1px solid gray;
+            font-size : 20px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        button {
+            width : 100px;
+            border : 1px solid gray;
+            padding : 10px;
+            margin-left : 30px;
+            font-size: 20px;
+        }
+        button:hover {
+            background-color : yellow;
+        }
+        hr {
+            clear : both;
+            visibility: hidden;
+        }
+        #nameList p {
+            font-size : 20px;
+            line-height: 1.5;
+        }
+        .del {
+            float : right;
+            font-size : 20px;
+            text-align: center;
+            color : blue;
+            background-color: white;
+            margin-right: 10px;
+        }
+        .del:hover{
+            color : red;
+            cursor : pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>참가신청</h1>
+        <form action="#">
+            <input type="text" placeholder="이름을 입력하세요" name="userName" id="userName" required>
+            <button id="regist">신청</button>
+        </form>
+        <hr>
+        <div id="nameList"></div>
+    </div>
+    <script>
+        document.getElementById("regist").addEventListener("click",function(){
+            const newP = document.createElement("p");
+            const newText = document.getElementById("userName").value;
+            newP.append(newText);
+            
+            const delBtn = document.createElement("span");
+            const delText = document.createTextNode("X");
+            delBtn.setAttribute("class","del");
+            delBtn.append(delText);
+            newP.append(delBtn);
+
+            delBtn.addEventListener("click",function(){
+                this.parentElement.remove();
+            },false)
+
+            const nameList = document.getElementById("nameList");
+            nameList.prepend(newP);
+            document.getElementById("userName").value = "";
+
+
+        },false);
+    </script>
+</body>
+</html>
+

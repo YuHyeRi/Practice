@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var v1 = Number(prompt('당신의 영어점수를 입력하세요.'));
+        if(!(v1 >= 1 && v1 <= 100)) {
+            alert('입력값을 다시 학인하세요.');
+        } else if (v1 > 80) {
+            alert('A등급 입니다.');
+        } else if (v1 > 60) {
+            alert('B등급 입니다.');
+        } else {
+            alert('재시험 대상자 입니다.');
+        }
+    </script>
+
+</body>
+</html>

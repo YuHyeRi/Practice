@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><label>1<input type="radio" name="num" id="num1" value="1번째를 선택 하셨습니다."></label></li>
+        <li><label>2<input type="radio" name="num" id="num2" value="2번째를 선택 하셨습니다."></label></li>
+        <li><label>3<input type="radio" name="num" id="num3" value="3번째를 선택 하셨습니다."></label></li>
+        <li><label>4<input type="radio" name="num" id="num4" value="4번째를 선택 하셨습니다."></label></li>
+        <button id="click">클릭</button>
+    </ul>
+
+    <script>
+        document.querySelectorAll('input[type="radio"]')[0].addEventListener("click",function() {
+            var list = document.querySelectorAll('input[type="radio"]');
+            for(let i = 0; i < list.length; i++) {
+                if(list[i].checked) {
+                    alert(list[i].value);
+                }
+            }
+        },false);
+    </script>
+</body>
+</html>

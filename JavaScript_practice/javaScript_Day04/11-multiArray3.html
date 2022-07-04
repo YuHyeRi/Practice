@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // for in : index를 출력해줌 + 속성값(color, name)까지 출력
+
+        var arr = [{ a: '123', b: '456' }, [1, 2, 3], [4, 5, 6, { c: '789' }]];
+        
+        for (let key1 in arr) {
+           if (typeof arr[key1] === 'object') {
+                for (let key2 in arr[key1]) {
+                    console.log(arr[key1][key2]);
+                }
+             }  else {
+                console.log(arr[key1]);
+            }
+        }
+
+        // var cgv = [[[1,2,3],[4,5,6],[7,8,9]],[[10,11,12],[13,14,15],[16,17,18]]]; //2,3,3
+        
+        // for (let index1 = 0; index1 < cgv.length; index1++) {
+        //     for (let index2 = 0; index2 < cgv[index1].length; index2++) {
+        //         for (let index3 = 0; index3 < cgv[index1][index2].length; index3++) {
+        //             console.log(cgv[index1][index2][index3]);
+        //         }
+        //     }        
+        // }
+    </script>
+
+</body>
+</html>

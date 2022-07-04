@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            background-color: #abc;
+            left: 0px;
+            top: 30px;
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+        }
+    </style>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+            $("#go").click(function () {
+                $(".block").animate({ left: "+=100px" }, 2000)              // 복수개도 쌉가능
+                .animate({top : '+=200px'}, 2000)
+            });
+            $('#stop').click(function() {
+                // $('.block').stop();
+                $('.block').stop(true, false);      // 대기중인 애니메이션 전부 X (애니메이션을 복수개로 넣었을 경우 사용)
+                $('.block').stop(false, true);      // 대기중인 애니메이션 전부 X 후 맨 끝 함수로 이동할 경우
+                $('.block').stop(true, true);     
+
+                // 앞 boolean : 대기중인 애니메이션 전부 제거,삭제
+                // 뒤 boolean : 진행중인 애니메이션을 강제 종료하고, 애니메이션을 종료한 맨 끝 상태로 이동
+
+                // 1. stop(true, true) 
+                //    현 진행되고 있는 효과는 정지되고/ 현재 효과의 끝으로 이동한 후(뒤,true) 나머지 효과들은 지워진다.(앞,false)
+
+                //2. stop(true, false) --> 그냥 stop이랑 똑같음
+                //    현 진행되고 있는 효과는 정지되고/ 모든 효과들이 정지된다.(앞,true)
+
+                //3. stop(false,true)
+                //    현 진행되고 있는 효과는 정지되고/ 현재 효과의 끝으로 이동한 후(뒤,true) 남은 효과들이 실행된다.(앞,false)
+
+                //4. stop(false,false)
+                //    현 진행되고 있는 효과는 정지되고/ 남은 효과들이 실행된다.(앞,false)
+
+            })
+            $("#back").click(function () {
+                $(".block").animate({ left: "-=100px" }, 2000);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="go">go</button>
+    <button id="stop">stop</button>
+    <button id="back">back</button>
+    <div class="block"></div>
+</body>
+
+</html>

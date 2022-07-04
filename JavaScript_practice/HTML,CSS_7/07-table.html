@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table {
+            border-collapse: separate;
+            border: 1px solid gray;
+            width: 500px;
+            table-layout: fixed;
+            word-break: break-all;
+            /* word-break : 텍스트가 콘텐츠 박스 밖으로 나올때 줄바꿈을 할지 말지 */
+        }
+        td {
+            height: 50px;
+            padding: 10px;
+            border: 1px solid gray;
+            empty-cells: hide;
+        }
+        .va1 {
+            vertical-align: top center;
+            /* vertical-align : inline 또는 table-cell box에서의 수직 정렬을 지정 */
+        }
+        .va2 {
+            vertical-align: bottom;
+        }
+        .va3 {
+            vertical-align: middle;
+        }
+        .va4 {
+            text-align: left;
+        }
+        .va5 {
+            text-align: right;
+        }
+        .va6 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <caption>caption</caption>
+        <tr>
+            <td class="va1">table 1</td>
+            <td class="va2">table 2</td>
+            <td class="va3">table 3</td>
+        </tr>
+        <tr>
+            <td class="va4">table 4</td>
+            <td class="va5">table 5</td>
+            <td class="va6">table 5</td>
+        </tr>
+        <tr>
+            <td class="va7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt harum praesentium
+                quisquam mollitia iste voluptatem blanditiis perferendis officia ipsam natus animi, sint et rem
+                distinctio, commodi voluptate maiores repudiandae! Labore?</td>
+            <td class="va8"></td>
+            <td class="va9"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

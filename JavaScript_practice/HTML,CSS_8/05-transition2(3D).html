@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .transition {
+            width: 50px;
+            height: 50px;
+            border: 1px solid gray;
+            border-radius: 50%;
+            background: silver;
+            transition-property: all;
+            transition-duration: 2s, 0.5s;
+            transition-timing-function: cubic-bezier(0.9, 0.29, 0.04, 1.06);
+        }
+        .transition:hover {
+            width: 80px;
+            height: 80px;
+            background-color: salmon;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="transition"></div>
+</body>
+</html>

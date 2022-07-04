@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        :link : 방문한 적이 없는 링크
+        :visited : 방문한 적이 있는 링크
+        :focus : 포커스 되었을 때(주로 input 링크 등)
+        실행 되는데 있어 가상선택자의 위치도 중요하다. 
+        */
+
+        a:link {
+            color: red;
+        }
+        a:hover {
+            color:salmon;
+        }
+        a:active {
+            color: green;
+        }
+        a:visited {
+            color: gray;
+        }
+        input:focus {
+            color: white;
+            background-color: gray;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <a href="#">visited</a>
+    <a href="#">unvisited</a>
+    <input type="text">
+</body>
+
+</html>

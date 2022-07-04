@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	
+	<!-- id는 BoardDAO의 session.update("board.ID명")과 일치!! -->
+	<!-- 1 -->
+	<select id="list" resultType="board.dto.BoardDTO">
+		select *
+		from (
+			  select rownum as rn, A.*
+			  from (
+			  		select num, writer, subject, reg_date, readcount,
+			  		(select count(*) from board_comment where board_num=b.num) comment_count,
+			  		filename, filesize, down, ref, re_step, re_level
+			  		from board b
+			  		order by ref desc, re_step asc
+			  		) A
+			  )
+			  where rn between #{start} and #{end}
+	</select>
+	
+	<!-- 2 -->	
+	<select id="count" resultType="int">
+		select count(*) from board
+	</select>
+	
+	<!-- 3 -->	
+	<insert id="insert">
+		insert into board 
+			(num, writer, subject, passwd, ref, re_step, re_level, content, ip, filename, filesize)
+		values 
+			((select nvl(max(num)+1,1) from board) , #{writer}, #{subject}, #{passwd},
+			 (select nvl(max(num)+1,1) from board) , 1, 0, #{content}, #{ip}, #{filename}, #{filesize})
+	</insert>
+	
+	<!-- 4 -->
+	<update id="plusReadCount">		
+		update board set readcount = readcount+1
+		where num=#{num}
+	</update>
+	
+	<!-- 5 -->
+	<!-- 셀렉한 내용을 dto에 담아서 DAO의 dto를 리턴함 -->
+	<select id="view" resultType="board.dto.BoardDTO">
+		select * from board
+		where num=#{num}
+	</select>
+
+	<!-- 6 -->
+	<update id="plusDown">
+		update board set down=down+1
+		where num=#{num}
+	</update>
+	
+	<!-- 7 -->
+	<select id="getFileName" resultType="String">
+		select filename from board
+		where num=#{num}
+	</select>
+	
+	<!-- 8 -->
+	<insert id="commentAdd">
+		insert into board_comment (comment_num, board_num, writer, content)
+		values ( (select nvl(max(comment_num)+1, 1) from board_comment),
+					#{board_num}, #{writer}, #{content} )
+	
+	</insert>
+	
+	<!-- 9 -->
+	<select id="commentList" resultType="board.dto.BoardCommentDTO">
+		select comment_num, board_num, writer, content,
+				to_char(reg_date, 'yyyy-mm-dd HH:mi:ss') reg_date
+		from board_comment
+		where board_num=#{board_num}
+		order by comment_num
+	</select>
+
+	<!-- 10 -->	
+	<select id="pass_check" resultType="String">
+		select passwd from board
+		where num=#{num} and passwd=#{passwd}
+	</select>
+	
+	<!-- 11 -->	
+	<update id="update">
+		update board set writer=#{writer}, subject=#{subject}, content=#{content},
+						filename=#{filename}, filesize=#{filesize}, down=#{down}
+		where num=#{num}
+	</update>
+	
+	<!-- 12 -->	
+	<delete id="delete">
+		delete from board
+		where num=#{num}
+	</delete>
+	
+	<!-- 13 답변 -->
+	<!-- dao의 updateStep, 기존꺼는 순서를 +1씩 해줘서 뒤로 한칸씩 밀리게 해준다 -->
+	<update id="updateStep">	
+		update board set re_step=re_step+1
+		where ref=#{ref} and re_step >= #{re_step}
+	</update>	
+	
+	<!-- 14 답변 -->
+	<!-- dao의 reply, 일련번호는 서브쿼리 이용하기 -->
+	<insert id="reply">			
+		insert into board
+		(num, writer, subject, passwd, ref, re_step, re_level, content, ip, filename, filesize) values 
+		
+		((select nvl(max(num)+1,1) from board), #{writer}, #{subject}, #{passwd}, #{ref},
+		  #{re_step}, #{re_level}, #{content}, #{ip}, #{filename}, #{filesize})
+	</insert>
+	
+	<!-- 15 -->
+	<select id="search_count" resultType="int">
+		select count(*) from board
+		<choose>
+			<!-- ${}를 쓰지 않고 그냥 변수를 써줌 -->
+			<when test="search_option != 'all'">	<!-- list.jsp에서의 all -->
+				<!-- search_option : writer, subject, content -->
+				where ${search_option} like '%' || #{keyword} || '%'
+			</when>
+			<when test="search_option == 'all'">	<!-- list.jsp에서의 all이 아닌 -->
+				where writer like '%'|| #{keyword} ||'%'
+				or subject like '%'|| #{keyword} ||'%'
+				or content like '%'|| #{keyword} ||'%'
+			</when>
+		</choose>
+	</select>
+	
+	<!-- 16 -->
+	<select id="searchList" resultType="board.dto.BoardDTO">
+		select *
+		from ( 
+			select rownum as rn, A.*
+ 			from ( 
+ 					select num,writer,subject,reg_date,readcount,(select count(*) from board_comment 
+					where board_num=b.num) comment_count ,filename,filesize,down ,ref,re_step,re_level 
+					from board b
+					<!-- choose절 검색옵션 -->
+					<choose>
+						<when test="search_option != 'all' ">
+						where ${search_option} like '%'|| #{keyword} ||'%'
+						</when>
+						<when test="search_option == 'all'">
+						where writer like '%'|| #{keyword} ||'%'
+						or subject like '%'|| #{keyword} ||'%'
+						or content like '%'|| #{keyword} ||'%'
+						</when>
+					</choose>
+ 					order by ref desc, re_step asc
+ 					) A
+				)
+				where rn between #{start} and #{end}
+	</select>
+		
+	
+</mapper>

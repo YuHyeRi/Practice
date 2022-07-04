@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        /* 
+        fixed 라고 설정되어 있는 엘리먼트는 그냥 고정된 것.
+        아무리 스크롤을 올리고 내려도 그 자리에 그대로 있음
+        ex) 쇼핑몰 우측에 [맨위로] 와 같은 버튼 
+
+        또한, absolute와 마찬가지로 부모와 링크가 끊기기 때문에 크기가
+        자기 컨텐츠만해지고, 부모는 자식을 없는셈친다는 점이 공통점이다.
+        */
+        .parent, .other {
+            border: 3px solid salmon;
+        }
+        .large {
+            height: 1000000px;
+            background-color: silver;
+        }
+        .me {
+            background-color: palevioletred;
+            color: white;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            height: 100px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="other">other</div>
+    <div class="parent">
+        parent
+        <div class="me">me</div>
+        <div class="large">large</div>
+    </div>
+</body>
+
+</html>

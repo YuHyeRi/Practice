@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var obj = {
+            name : 1,
+            age : 2,
+            hobby : 3
+        };
+        for(var item in obj) {
+            console.log(item);      // for..in : "객체순환". name, age, hobby 출력 (key값 출력!!)
+        }
+
+        var arr = [1, 2, 3];
+        for(var item of arr) {      // for..of : "배열순환". 1, 2, 3 출력
+            console.log(item);
+        }
+
+    </script>
+
+</body>
+</html>

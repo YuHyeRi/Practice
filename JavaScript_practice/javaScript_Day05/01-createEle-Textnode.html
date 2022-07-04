@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id='ul1'>
+        <li>가</li>
+        <li>나</li>
+        <li>다</li>
+    </ul>
+
+    <ul id='ul2'>
+        <li>A</li>
+        <li>B</li>
+        <li id='third'>C</li>
+    </ul>
+
+    <button id='btn1'>위 항목추가</button>
+    <button id='btn2'>아래 항목추가</button>
+    <button id='btn3'>삭제</button>
+    
+    <script>
+        document.querySelector('#btn1').addEventListener("click",function() {
+            var li = document.createElement('li');
+            var text = document.createTextNode('라');
+            li.append(text);
+            document.querySelector('#ul1').append(li);
+        },false);
+
+        document.querySelector('#btn2').addEventListener("click",function() {
+            var li = document.createElement('li');
+            var text = document.createTextNode('D');
+            li.append(text);
+            document.querySelector('#third').after(li);     // after, before
+        },false);
+
+        document.querySelector('#btn3').addEventListener("click", function() {
+            document.querySelector('#third').previousElementSibling.previousElementSibling.remove();
+        },false);
+
+    </script>
+</body>
+</html>

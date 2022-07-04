@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 함수표현식 보다는 함수선언문이 더 자유로움
+        // 화살표함수는 꼭 알아둘것(굉장히 활발히 사용중임)
+        // 화살표함수는 일반함수와는 달리 자신만의 this를 가지지 않음
+        // 화살표함수 내에서 this를 사용하면, 그 this는 외부에서 값을 가져옴
+
+        // let add = function(num1, num2) {
+        //     return num1 + num2;}
+
+        // let add = (num1, num2) => {     // function 대신 => 넣기
+        //     return num1 + num2;}
+
+        // let add = (num1, num2) => (     // return 대신 ()로 묶기
+        //     num1 + num2; )
+
+        // let add = (num1, num2) =>       // return 이 하나라면 ()도 생략 가능
+        //     num1 + num2;
+
+        // showError();
+        // function showError() {
+        //     console.log('error');}
+        // let showError = () => {
+        //     console.log('error');}      // 이렇게 화살표 함수로 변환 가능
+
+        // const sayHello = function(name) {
+        //     const msg = `hello, ${name}`;
+        //     console.log(msg);};
+        // const sayHello = (name) => {       // 이렇게 화살표 함수로 변환 가능
+        // const msg = `hello, ${name}`;
+        // console.log(msg);};
+
+        const add = function(num1, num2) {
+            const result = num1 + num2;
+            return result;};
+        const add = (num1, num2) => {    // 이렇게 화살표 함수로 변환 가능
+            return num1 + num2;};   // return을 지우고 {}를 ()로 변경해줘도 됨 
+        const add = (num1, num2) => num1 + num2; // return문이 하나라 이렇게 더 간결하게 줄일 수 있음
+
+    </script>
+
+</body>
+</html>

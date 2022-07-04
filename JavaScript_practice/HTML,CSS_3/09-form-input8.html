@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <ul>
+            <li><lable>이름 : <input type="text" pattern="[가-힣]{2,}" title="한글 두 글자 이상" required></lable></li>
+            <!-- title : 오류시 보여질 안내문구 -->
+
+            <li><lable>학번 : <input type="number" pattern="[0-9]{8}" required></lable></li>
+
+            <li><lable>이메일 : <input type="email" required></lable></li>
+
+            <li><lable>주소 : <input type="text" pattern="[0-9가-힣\s]{1,}" required></lable></li>
+            <!-- \s : 공백 -->
+
+            <li><lable>휴대폰 : <input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="-을 넣어 입력하세요." required></lable></li>
+        
+            <button type="submit">등록</button>
+        </ul>
+    
+    </form>
+</body>
+
+</html>

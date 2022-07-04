@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // switch (== if else문)
+        // switch문은 true 인 값 외에도 그 뒤의 값까지 모두 출력됨 
+        // 따라서 switch문에서는 break를 써줘야함
+        // break, continue
+        // default
+
+        // 사과 : 100원
+        // 키위 : 200원
+        // 멜론 : 300원
+        // 딸기 : 300원
+        let fruit = prompt('어떤 과일을 사고 싶나요?');
+
+        switch(fruit) {
+            case '사과' : 
+                console.log('100원 입니다');
+                break;
+            case '키위' : 
+                console.log('200원 입니다');
+                break;
+            case '멜론' : 
+            case '딸기' :
+                console.log('300원 입니다.');
+                break;
+            default :
+                console.log('그런 과일은 없습니다.');
+        }
+    </script>
+
+</body>
+</html>

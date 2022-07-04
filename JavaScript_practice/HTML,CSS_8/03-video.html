@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            text-align: center;
+            margin-top: 25%;
+            margin-left: 10%;}
+
+        p {
+            font-size: 1.8em;
+            font-weight: bold;
+            font-family: "맑은 고딕";}
+
+        .bg {
+            position: fixed;
+            left: 0;
+            top: 0;
+            min-width: 100%;
+            max-width: 100%;}
+            /* z-index: -9999; */
+            /* background: url("flame.jpg") left top no-repeat; */
+            /* background-size: contain; */
+    </style>
+</head>
+
+<body>
+    <video src="media/flame.mp4" autoplay loop muted poster="img/flame.jpg" class="bg"></video>
+    <div class="container">
+        <p>Example</p>
+    </div>
+</body>
+</html>

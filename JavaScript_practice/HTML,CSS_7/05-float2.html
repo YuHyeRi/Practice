@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .float-box1 {
+            padding: 50px;
+            margin-right: 10px;
+            background-color: silver;
+            float: left;
+        }
+
+        .float-box2 {
+            padding: 50px;
+            margin-right: 10px;
+            background-color: khaki;
+            float: left;
+        }
+
+        .float-box3 {
+            padding: 50px;
+            background-color: salmon;
+            float: left;
+        }
+
+        .float-box4 {
+            padding: 50px;
+            background-color: tan;
+            float: right;
+        }
+
+        .float-box5 {
+            clear: both;
+            /* clear : float 사이의 내용이 말려 올라가는 것을 방지, 보통 both를 많이 쓴다. */
+            /* float를 사용했으면 다른 속성에는 clear를 써줘야함 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="float-box1">1</div>
+    <div class="float-box2">2</div>
+    <div class="float-box3">3</div>
+    <div class="float-box4">4</div>
+    <div class="float-box5">float clear both</div>
+</body>
+
+</html>

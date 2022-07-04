@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    // key(키): name, inch, orient -> key는 문자열만 가능
+    // value(값) : 'samsung monitor', 22, 'LED'
+        var product = {
+            name : 'SAMSUNG monitor',
+            inch : 22,
+            orient : 'LED',
+        };
+        with(product) {
+            console.log(name);      // SAMSUNG monitor
+            console.log(inch);      // 22
+            console.log(orient);    // LED
+        }
+    </script>
+</body>
+</html>

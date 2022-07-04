@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num">
+    <button id="btn">생성하기</button>
+    <ul id="content"></ul>
+
+    <script>
+        var indexNum = 0;
+
+        document.querySelector("#btn").addEventListener("click", function() {
+            var num = Number(document.querySelector("#num").value);
+            var ul = document.querySelector("#content");
+            for (let i = 1; i <= num; i++) {            // 변수 i는 왜 있는지?
+                indexNum++;                             // 변수 indexNum은 왜 있는지?
+                var li = document.createElement("li");
+                var text = document.createTextNode(`새로 생성된 텍스트 ${indexNum}`);
+                ul.append(li);          // 요소 마지막에 새로운 요소를 추가(ul요소 뒤에 li요소 추가)
+                li.append(text);        // 요소 마지막에 새로운 요소를 추가(li요소 뒤에 text요소 추가)
+            }
+        },false);
+    </script>
+</body>
+</html>

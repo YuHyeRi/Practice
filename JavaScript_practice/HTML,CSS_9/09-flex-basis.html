@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./basic-flex.css">
+    <style>
+        /* flex-basis : 아이템의 초기 크기를 지정 */
+        /* flex-basis보다 width가 우선이기 때문에, basis위에 width가 있으면 적용 X */
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-item1 {
+            flex-basis: 300px;
+        }
+
+        .flex-item2 {
+            width: 300px;
+        }
+
+        .flex-item3 {
+            flex-basis: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="flex-item flex-item1">box1box1box1box1box1box1box1</div>
+        <div class="flex-item flex-item1">box2</div>
+        <div class="flex-item flex-item1">box3</div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item flex-item2">box4box4box4box4box4box4box4</div>
+        <div class="flex-item flex-item2">box5</div>
+        <div class="flex-item flex-item2">box6</div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item flex-item3">box7box7box7box7box7box7box7</div>
+        <div class="flex-item flex-item3">box8</div>
+        <div class="flex-item flex-item3">box9</div>
+    </div>
+</body>
+</html>

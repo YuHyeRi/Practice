@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        location 객체는 브라우저의 위치를 의미하는 게 아니라, url과 관련된 인터넷 주소를 의미한다.
+        인터넷 상에서의 위치가 어디인지를 결정한다. 
+    -->
+    
+    <script>
+        console.log(location.toString());
+        console.log(location.href);
+
+        location.href = "http://www.google.co.kr";          // 해당 주소로 강제 이동하게 됨
+        location.reload();                                  // 새로고침
+    </script>
+</body>
+</html>

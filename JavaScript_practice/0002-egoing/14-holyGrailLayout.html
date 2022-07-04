@@ -1,0 +1,82 @@
+<!DOCTYPE html5>
+<!-- 그냥 기본값 html을 넣으면 body에 flex 속성이 없어진다. 그래서 html5라고 수정하기 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            /* 컨텐츠를 가운데정렬(위아래 기준) */
+            justify-content: center;
+            /* 컨텐츠를 가운데정렬(좌우 기준) */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            border: 1px solid gray;
+        }
+        header {
+            border-bottom: 1px solid gray;
+            padding-left: 20px;
+        }
+        footer {
+            border-top: 1px solid gray;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            display: flex;
+        }
+        .content nav {
+            border-right: 1px solid gray;
+            order: -1;
+            /* order : 컨텐츠 나열 순서 (0,1,2,.. 순으로!) */
+        }
+        .content main {
+            border-right: 1px solid gray;
+        }
+        nav, aside {
+            flex-basis: 150px;
+            flex-shrink: 0;
+        }
+        .main {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>생활코딩</h1>
+        </header>
+        <section class="content">
+            <nav>
+                <ul>
+                    <li>html</li>
+                    <li>css</li>
+                    <li>javaScript</li>
+                </ul>
+            </nav>
+            <main>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus ipsum repellat iste recusandae rerum molestias corporis molestiae quis vitae inventore nulla velit, voluptas blanditiis culpa iusto veniam animi quod officiis.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus ipsum repellat iste recusandae rerum molestias corporis molestiae quis vitae inventore nulla velit, voluptas blanditiis culpa iusto veniam animi quod officiis.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus ipsum repellat iste recusandae rerum molestias corporis molestiae quis vitae inventore nulla velit, voluptas blanditiis culpa iusto veniam animi quod officiis.
+                </p>
+            </main>
+            <aside>
+                <p>AD</p>
+            </aside>
+        </section>
+        <footer>
+            <a href="#">
+                홈페이지
+            </a>
+        </footer>
+    </div>
+</body>
+</html>

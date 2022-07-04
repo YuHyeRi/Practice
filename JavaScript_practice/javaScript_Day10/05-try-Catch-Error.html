@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        try{
+            value.test();
+        } catch(e) {        // 'e'는 내맘대로 붙여버림
+            console.log(e.name);        // 예외 이름
+            console.log(e.message);     // 예외 메시지
+            console.log(e.description);  // 예외 설명
+        }
+
+        // EvalError : 전역함수 eval()에서 발생하는 오류 -> eval()함수는 절대 쓰지 말것!!!
+        // RangeError : 숫자변수나 매개변수가 유효한 범위를 벗어났음을 나타내는 오류
+        // ReferenceError : 잘못된 참조를 했음을 
+        // SyntaxError : eval()이 코드를 분석하는 중 잘못된 구문을 만났음을 나타내는
+        // TypeError : 변수나 매개변수가 유효한 자료형이 아님을 나타내는
+    </script>
+</body>
+</html>

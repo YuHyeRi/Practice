@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select : 목록에 있는 것만 선택</title>
+</head>
+
+<body>
+    <form action="#" method="get">
+        <ul>
+            <li>
+                <select name="class" id="class" size="8" multiple>
+                    <!-- multiple : 컨트롤 누르면 복수개 지정 가능 -->
+
+                    <optgroup label="상경계열">
+                        <option value="1" selected>경영학과</option>
+                        <!-- value : 선택시 url 뒤에 붙여 나오는 값 -->
+                        <!-- selected : 첨부터 선택되어져나옴 -->
+                        <option value="2">경제학과</option>
+                        <option value="3">회계학과</option>
+                        </optgrup>
+                        
+                    <optgroup label="사회과학계열">
+                        <option value="4">정치외교학과</option>
+                        <option value="5">사회복지학과</option>
+                        <option value="6">신문방송학과</option>
+                        </optgrup>
+                </select>
+            </li>
+        </ul>
+    </form>
+</body>
+
+</html>

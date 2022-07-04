@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            background: whitesmoke;
+            list-style-type: none;
+            padding: 0px;
+            border-radius: 3px;
+        }
+        .form-row {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0.5em;
+        }
+        .form-row label {
+            padding: .5em 1em .5em 0;
+            flex-grow: 1;
+        }
+        .form-row input {
+            flex-grow: 2;
+        }
+        .form-row input, .form-row button {
+            padding: 0.5em;
+        }
+        .form-row button {
+            background: gray;
+            color: white;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="wrapper">
+        <li class="form-row">
+            <label for="name">name</label>
+            <input type="text" name="name" id="name">
+        </li>
+        <li class="form-row">
+            <label for="born">town you were born in</label>
+            <input type="text" name="born" id="born">
+        </li>
+        <li class="form-row">
+            <label for="email">email</label>
+            <input type="email" name="email" id="email">
+        </li>
+        <li class="form-row">
+            <button type="submit">submit</button>
+        </li>
+    </ul>
+</body>
+</html>

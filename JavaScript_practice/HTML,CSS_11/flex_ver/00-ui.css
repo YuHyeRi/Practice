@@ -1,0 +1,195 @@
+/* 01 Menu */
+.menu {
+    display: flex;
+    /* flex 디폴트 값은 row정렬(inline) / 수직정렬은 direction을 column으로 해줘야한다 */
+    /* 또한 flex는 가로로 "꽉 찬 배치"가 가능하다 (flex-grow를 쓰기) */
+}
+.menu-item {
+    /* width: 25%; */
+    /* width로 쓰던지 flex-grow로 쓰던지는 본인 취향 */
+    flex-grow: 1;
+    /* flex-grow : 각 메뉴당 1:1:1:1 비율로 메뉴가 화면에 꽉차게 해주는 용도 */
+    background: salmon;
+    transition-duration: 0.5s;
+}
+.menu-item:hover {
+    /* width: 35%; */
+    flex-grow: 1.5;
+    background: rgb(245, 230, 247);
+}
+.menu-link {
+    /* ----------flex로 쓰려면.. */
+    display: flex;
+    height: 3.2em;
+    justify-content: center;
+    align-items: center;
+    /* ----------block으로 쓰려면.. */
+    /* display: block; */
+    /* block을 쓰는이유:text-align:center(가운데정렬)값을 주고 padding값을 주기 위해서 (flex로 주면 text-align이 안 먹힘) */
+    /* text-align: center; */
+    /* padding: 0.5em; */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+.menu-link:hover {
+    color: black;
+}
+
+
+/* 02 Search */
+.search-form {
+    display: flex;
+    height: 30px;
+}
+.search-form input[type="search"] {
+    flex: 1;
+    /* flex-grow 를 flex로 표현 한 것, 각 항목들은 남는 공간에 일정하게 분배하는 것(1:1:1,..) */
+    min-width: 0;
+    /* 얼마만큼 축소될지 모르기 때문에.. input이 나중에 축소하더라도 나중에 찌그러지지 않게, 보험차 놓은 것 */
+    margin-right: 10px;
+    border: 1px solid silver;
+    border-radius: 0.5em;
+    /* border-radius : 테두리 모서리 둥글게 만들기 */
+    font-size: 0.8rem;
+}
+.search-form button[type="button"] {
+    width: 5em;
+    border: 1px solid white;
+    border-radius: 0.5em;
+    font-size: 0.8rem;
+    background-color: salmon;
+    color: white;
+}
+.search-form input[type="search"]:focus{
+    color: salmon;
+    font-size: 0.7rem;
+}
+.search-form button[type="button"]:hover {
+    background-color: gray ;
+    color: white;
+}
+
+/* 03 bullet */
+.info-list{
+    margin-bottom: 2rem;
+    /* 이 bullet 컨텐츠 아래 여백을 조금 띄기 위해서, 굳이 안써도 됨. 보기좋으라고 띄운거 */
+}
+.info-list-item{
+    display: flex;
+    margin: 0.5em 0;
+    /* margin 위아래,좌우  --- 위,가로,아래(값3개일경우) / 위,우,아래,좌(값4개일경우) */
+}
+.info-list-item a {
+    text-decoration: none;
+    color: gray;
+}
+.info-list-item::before {
+    /* ::before > 보통 contatn와 함께 짝지어 쓰임. 요소에 장식 콘텐츠를 추가할 때 사용됨 */
+    content: '🤔';
+    margin-right: 0.5em;
+}
+
+
+/* 04 message */
+.user-list {
+    margin-bottom: 2rem;
+}
+.user-item {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+.user-photo {
+    flex-shrink: 0;
+    /* flex-grow와 함께 쓰인다 */
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5em;
+    border: 2px solid silver;
+    border-radius: 50%;
+    /* 50%으로 하면 테두리를 둥근원으로 만들어 준다 */
+    background: no-repeat center;
+    background-image: url("./img.png");
+    background-size: 100%;
+    /* 모든 이미지가 나오게, 안쓰면 이미지가 짤려서 나옴 */
+}
+.message-content {
+    padding-top: 1em;
+}
+
+
+/* 05 users */
+.friend-item {
+    align-items: center;
+}
+.user-name {
+    /* overflow, text-overflow, white-space 세개는 거의 같이 쓰임 */
+    overflow: hidden;
+    /* 넘치는 부분은 보이지 않음 (그외, scroll, auto, visible(디폴트)) */
+    text-overflow: ellipsis;
+    /* clip(디폴트,텍스트자름), ellopsis(..로표시), string(잘린텍스트를 지정한 문자로 표시) */
+    white-space: nowrap;
+    /* white-space : 요소가 공백문자를 처리하는 법을 지정 */
+}
+
+
+/* 06 modal */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.3);
+}
+.dialog {
+    width: 50vw;
+    padding: 2em;
+    border-radius: 1em;
+    background: white;
+}
+
+
+/* 07 main */
+.card-item  {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.card-image {
+    background: no-repeat center silver;
+    background-image: url("./img2.jpg");
+    background-size: 100%;
+    padding-bottom: 50%;
+}
+
+.card-desc {
+    /* overflow, text-overflow, white-space 거의 같이 쓰임 */
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 1rem;
+    background: white;
+    text-align: center;
+}
+@media (min-width: 600px) {
+    .card-list {
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-wrap : 요소 배치 (nowrap:강제한줄, wrap : 화면창에따라 알아서 위아래 골고루 배치 ) */
+    }
+    .card-item {
+        width: 50%;
+        padding: 0 1rem;
+    }
+}
+@media (min-width: 1200px) {
+    .card-item {
+        width: 33.33333%;
+    }
+}

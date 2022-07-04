@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+            $(document).ready(function() {
+                var originsize = $('#lorem').css('font-size');
+                $('#persent').click(function() {
+                    $('#lorem').css('font-size','originsize')
+                });
+
+                $('#minus').click(function() {
+                    var mfontSize = $('#lorem').css('font-size');
+                    var msize = $('#lorem').css('font-size');
+                    var msize = parseFloat(msize)*0.8;
+                    $('#lorem').css('font-size',msize);
+                    return false;
+                })
+
+                $('#plus').click(function() {
+                    var msize = $('#lorem').css('font-size');
+                    var msize = parseFloat(msize)*1.2;
+                    $('#lorem').css('font-size',msize);
+                    return false;
+                });
+            });
+    </script>
+</head>
+<body>
+    <br><br>
+    <button id="minus">-</button>
+    <button id="persent">100%</button>
+    <button id="plus">+</button>
+    <p id="px">14px</p>
+    <p id="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Quasi, maxime. Corrupti iste placeat tempore. 
+        Voluptates nisi ab similique maxime numquam est praesentium sequi vitae ipsa. 
+        Perspiciatis consequatur sint assumenda facere.
+        Inventore itaque facilis laudantium dolorum repellat numquam mollitia ex eligendi consequuntur sint minus, 
+        dolore laborum! Molestias explicabo sapiente fugit. 
+        Doloribus facere in similique perferendis neque harum officiis voluptatem enim accusantium.
+    </p>
+</body>
+</html>

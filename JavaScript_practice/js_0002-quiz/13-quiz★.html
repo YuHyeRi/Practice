@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1,2번 항목 모두 체크시에 정답으로 간주 -->
+    <h2>select the correct answer</h2>
+    <ul>
+        <li><label>A<input type="checkbox" name="doc" class="doc"></label></li>
+        <li><label>B<input type="checkbox" name="doc" class="doc"></label></li>
+        <li><label>C<input type="checkbox" name="doc" class="doc"></label></li>
+        <li><label>D<input type="checkbox" name="doc" class="doc"></label></li>
+        <li><label>E<input type="checkbox" name="doc" class="doc"></label></li>
+    </ul>
+    <button id="btn">제출하기</button>
+    <div id="content"></div>
+
+    <script>
+        document.querySelector('#btn').addEventListener("click", function() {
+            var result = "11000";
+            var str = "<h2>오답입니다.</h2>"
+            var comp = "";
+            document.querySelectorAll('.doc').forEach(Element => {      // for-each 함수, arrow 함수 다시보기★
+                comp += (Element.checked)? "1":"0";
+                if(result === comp) {
+                    str = "<h2>정답입니다.</h2>"
+                }
+                document.querySelector('#content').innerHTML = str;
+            })
+        },false);
+    </script>
+</body>
+</html>

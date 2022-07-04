@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        // 속성을 여러개 넣는 방법 1
+        $(function() {
+            $('*').css('background-color', 'gray').css('border','1px solid black')         
+            // 여기는 css문법 그대로 씀 (backgroundColor X, background-color O)
+
+        // 속성을 여러개 넣는 방법 2 (object처럼)
+            $('h2').css({
+                'padding' : '2em',
+                'color' : 'salmon'
+            });
+            $('.cls').css('box-shadow', '3px 3px 0 6px purple');
+            $('#id').css('font-size', '5em');
+            $('h1,h2').css('background-color', 'orange');
+            $('#btn').click(function() {
+                alert('땡땡땡땡!! 빼엠빼엠빼엠빼엠빼엠빼엠')
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery1</h1>
+    <h2>jQuery2</h2>
+    <h3 class="cls">jQuery3</h3>
+    <h4 id="id">Twerking</h4>
+    <button id="btn">클릭</button>
+</body>
+</html>

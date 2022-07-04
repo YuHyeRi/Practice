@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: salmon;
+        }
+    </style>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('strong').unwrap();           
+            // .unwrap : strong 밖의 태그인 h2를 없앰
+
+            $('.ct1').wrap('<div/>');      
+            // .wrap : ct1의 태그를 각각 div 태그로 감쌀 때
+
+            $('.ct2').wrapAll('<div/>');    
+            // .wrapAll : ct2의 태그를 모두 div 태그로 감쌀 때
+
+            $('li').wrapInner('<h2/>');     
+            // .wrapInner : li 태그 안쪽으로 h2 태그로 감쌀 때
+        });
+    </script>
+</head>
+<body>
+    <!-- (h2#title_1>strong{객체조작 및 생성})+(p.ct1*2)+(p.ct2*2)+ul>li*2 -->
+    <h2 id="title_1"><strong>객체조작 및 생성</strong></h2>
+     <p class="ct1">내용1</p>
+     <p class="ct1">내용2</p>
+     <p class="ct2">내용3</p>
+     <p class="ct2">내용4</p>
+        <ul>
+            <li>내용3</li>
+            <li>내용4</li>
+        </ul>
+</body>
+</html>

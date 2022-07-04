@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: salmon;
+            border: 3px salmon solid;
+            height: 200px;
+            display: flex;
+            /* 부모태그(제일 바깥쪽에 있는)에 flex를 써준다. */
+            flex-direction: row;
+            /* flex-direction의 기본값 : row (반대는 row-reverse) */
+            /* 또한 flex는 row던 column이던 한줄을 다 쓴다. */
+        }
+        .item {
+            background-color: slategray;
+            border: 1px solid white;
+            color: white;
+            flex-grow: 1;
+            /* 각각의 item들에게 여백을 나눠가져라..
+            container의 여백이 사라짐 (기본값은 0) */
+        }
+        /* item의 2번째 자식을 가르킴!!!! 중요 */
+        /* flex-basis : 2번째 아이템의 크기가 200px */
+        .item:nth-child(2) {
+            flex-basis: 200px;
+            flex-shrink:0;
+            /* flex-shrink:0 : 사용자가 페이지를 줄여도 알아서 줄여지지 않음 */
+            /* shrink는 basis와 같이 쓰인다. basis로 어떤 값을 가지고 있을 때,
+            shrink가 0일 경우 페이지를 줄여도 줄여지지 않는다.(basis 값 그대로 유지) */
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    **container : display, flex-direction, fex-wrap, flex-flow, justify-content, align-items, align-content
+    **item : order, flex-grow, flex-shrink, flex-basis, flex, align-self 
+    -->
+
+    <!-- .item{$}*5  -->
+    <!-- flex를 쓰려면 부모(ex.container)와 자식(item)이 있어야 한다. -->
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>

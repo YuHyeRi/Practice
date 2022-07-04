@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>        // 객체 선언 ver.1
+        var pen = {
+            shape : 'circle',
+            color : 'black',
+            weigth : 30
+        };
+        console.log(typeof pen);    // object
+        console.dir(pen);   // console.dir : 해당 속성의 값을 보여줌
+        
+        console.log(pen.color);     // black
+        pen.color = 'pink';
+        console.log(pen.color);     // pink
+
+        pen.switch_name = 'monami';     // 어떤 객체의 속성도 추가로 선언 가능
+        console.log(pen.switch_name);   // monami
+    </script>
+
+</body>
+</html>

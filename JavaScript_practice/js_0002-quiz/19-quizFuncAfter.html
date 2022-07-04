@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li><label for="ch1">아이템1</label><input type="checkbox" name="c1" id="ch1"></li>
+        <li><label for="ch2">아이템2</label><input type="checkbox" name="c1" id="ch2"></li>
+        <li><label for="ch3">아이템3</label><input type="checkbox" name="c1" id="ch3"></li>
+        <li><label for="ch4">아이템4</label><input type="checkbox" name="c1" id="ch4"></li>
+        <li><label for="ch5">아이템5</label><input type="checkbox" name="c1" id="ch5"></li>
+    </ul>
+    <ul id="ul2">
+        <li><label for="ch6">아이템6</label><input type="checkbox" name="c1" id="ch6"></li>
+        <li><label for="ch7">아이템7</label><input type="checkbox" name="c1" id="ch7"></li>
+        <li><label for="ch8">아이템8</label><input type="checkbox" name="c1" id="ch8"></li>
+        <li><label for="ch9">아이템9</label><input type="checkbox" name="c1" id="ch9"></li>
+        <li><label for="ch10">아이템10</label><input type="checkbox" name="c1" id="ch10"></li>
+    </ul>
+    <button id="b1" class="btn-event">ul1위에서ul2위로</button><br>
+    <button id="b2" class="btn-event">ul1위에서ul2아래로</button><br>
+    <button id="b3" class="btn-event">ul1아래서ul2위로</button><br>
+    <button id="b4" class="btn-event">ul1아래서ul2아래로</button><br>
+    <button id="b5" class="btn-event">ul2위에서ul1위로</button><br>
+    <button id="b6" class="btn-event">ul2위에서ul1아래로</button><br>
+    <button id="b7" class="btn-event">ul2아래서ul1위로</button><br>
+    <button id="b8" class="btn-event">ul2아래서ul1아래로</button><br>
+    <button id="b9" class="btn-event">삭제</button><br>
+    <input type="text" name="text" id="text"><button id="b10" class="btn-event">수정</button>
+
+    <script>
+        function moveElement_sm(ori, des, e, target){
+            const f1 = document.getElementById(ori);
+            const f1_el = (e)?f1.firstElementChild:f1.lastElementChild;
+            if(target){
+                document.getElementById(des).prepend(f1_el);
+            }else{
+                document.getElementById(des).append(f1_el);
+            }
+        }
+        document.getElementById("b1").addEventListener("click",function(){moveElement_sm("ul1","ul2",true,true);},false);
+        document.getElementById("b2").addEventListener("click",function(){moveElement_sm("ul1","ul2",true,false);},false);
+        document.getElementById("b3").addEventListener("click",function(){moveElement_sm("ul1","ul2",false,true);},false);
+        document.getElementById("b4").addEventListener("click",function(){moveElement_sm("ul1","ul2",false,false);},false);
+        document.getElementById("b5").addEventListener("click",function(){moveElement_sm("ul2","ul1",true,true);},false);
+        document.getElementById("b6").addEventListener("click",function(){moveElement_sm("ul2","ul1",true,false);},false);
+        document.getElementById("b7").addEventListener("click",function(){moveElement_sm("ul2","ul1",false,true);},false);
+        document.getElementById("b8").addEventListener("click",function(){moveElement_sm("ul2","ul1",false,false);},false);
+
+
+        document.getElementById("b9").addEventListener("click",function(){
+            var input = document.getElementsByName("c1");
+            for (let key = 0; key < input.length; key++) {
+                if (input[key].checked) {
+                    input[key].parentElement.remove();
+                }    
+            }
+        },false);
+        document.getElementById("b10").addEventListener("click",function(){
+            var input = document.querySelectorAll("input[name='c1']");
+            var text = document.getElementById("text").value;
+            for (const key in input) {
+                if (input[key].checked) {
+                    const target = input[key].parentElement.firstChild;
+                    const textNode = document.createTextNode(text);
+                    input[key].parentElement.replaceChild(textNode,target);
+                }
+            }
+        },false);
+    </script>
+</body>
+</html>

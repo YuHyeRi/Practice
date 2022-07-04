@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('#back').click(function() {
+                // history.back();
+                history.go(-1);                     // go(0)이라면 새로고침이다.
+            });
+            $('#forward').click(function() {
+                // history.forward();
+                history.go(1);
+            })
+            $('#move3').click(function() {
+                location.href = "08-history3.html"
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>history2</h2>
+    <button id="back">이전 페이지</button>
+    <button id="forward">다음 페이지</button>
+    <button id="move3">history3으로 이동</button>
+</body>
+</html>

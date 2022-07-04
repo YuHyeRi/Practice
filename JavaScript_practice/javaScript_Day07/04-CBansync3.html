@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function square(x, callback) {
+            setTimeout(callback, 2000, x*x);
+        }
+        square(2, function(x) {
+            // console.log(x);
+            square(x, function(x2) {
+                square(x2, function(x3) {
+                    console.log(x3);
+                })
+            })
+        })
+    </script>
+</body>
+</html>

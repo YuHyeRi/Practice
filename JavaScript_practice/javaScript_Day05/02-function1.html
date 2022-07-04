@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="a()">클릭</button>
+    <button onclick="b()">클릭</button>
+    <button id="action">클릭</button>
+    <script>
+        // 방식 ver.1
+        function a() {
+            alert('안녕하세요!')
+        };
+
+        // 방식 ver.2 리터럴 방식
+        var b = function() {
+            alert('반갑습니다!')
+        };
+
+        function c() {
+            alert('addEventListener를 통한 함수 사용하기')
+        };
+        document.querySelector('#action').addEventListener("click",c,false);
+
+        // 즉시실행 함수
+        (function(name) {
+            console.log(name);
+        })("foo");
+    </script>
+</body>
+</html>

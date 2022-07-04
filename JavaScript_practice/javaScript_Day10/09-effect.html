@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+
+            // fadein() : 숨겨진 요소를 나타나게 함
+            // fadeout() : 요소를 사라지게함
+            // fadeToggle() : 실행시 in메소드와 out 메소드를 번갈아가며 적용한다
+            // fadeTo() : fade효과에서 사용하는 opacity 속성값을 직접 설정한다 
+
+            // linear = 일정한 속도로 움직임
+            // swing = 시작/끝에서는 느리게 움직이지만 중간에서는 빨리진다.
+
+            $(".btn2").hide();
+
+            $(".btn1").on("click", function(){
+                // 위로 서서히 말려 올라가면서 컨텐츠가 사라짐
+                // $(".box").slideUp(1000, "linear", function(){
+                //     $(".btn1").hide();
+                //     $(".btn2").show();
+                // });
+                // 투명도를 조절하며 서서히 투명해지면서 사라짐
+                $(".box").fadeOut(1000, "swing", function(){
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                });
+            });
+
+            $(".btn2").on("click", function(){
+                // 아래로 서서히 내려오면서 컨텐츠가 나타남
+                // $(".box").slideDown(1000, "linear", function(){
+                //     $(".btn2").hide();
+                //     $(".btn1").show();
+                // });
+                // 투명도를 조절하며 서서히 선명해지면서 나타남
+                $(".box").fadeIn(1000, "swing", function(){
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                });
+            });
+
+        });
+    </script>
+    <style>
+        .content{
+            width: 400px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button class="btn1">slideup</button>
+        <button class="btn2">fadeIn</button></p>
+    <p><button class="btn3">toggleSide</button></p>
+    <p><button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button></p>
+    <div class="box">
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quaerat illum et architecto voluptatem alias perspiciatis iusto? Eveniet ex minima aut sint cum nisi tempora enim possimus, alias quibusdam veniam.
+        </div>
+    </div>
+</body>
+</html>
+

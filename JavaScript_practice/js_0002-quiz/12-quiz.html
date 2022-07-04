@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 사지선다 문제 만들어서 정답 체크하기 -->
+    
+    <h2>유혜리가 태어난 연도는?</h2>
+   <ol>
+       <li><lable>1991년<input type="radio" name="nothing" class="birth" value="A"></lable></li>
+       <li><lable>1992년<input type="radio" name="nothing" class="birth" value="B"></lable></li>
+       <li><lable>1993년<input type="radio" name="nothing" class="birth" value="C"></lable></li>
+       <li><lable>1994년<input type="radio" name="nothing" class="birth" value="D"></lable></li>
+   </ol>
+   <button id="btn">정답확인</button>
+   <div id="content"></div>
+
+   <script>
+       document.querySelector('#btn').addEventListener("click", function() {
+            var birth = document.querySelectorAll('.birth');    // querySelectorAll 써서 Error 방지★
+            var str = "<h2>오답입니다.</h2>";
+            for(let i = 0; i < birth.length; i++) {
+                if(birth[i].checked && birth[i].value === "A") {
+                    str = "<h2>정답입니다.</h2>"
+                    break;
+                }
+            }
+            document.querySelector('#content').innerHTML = str;
+       },false);
+   </script>
+
+</body>
+</html>

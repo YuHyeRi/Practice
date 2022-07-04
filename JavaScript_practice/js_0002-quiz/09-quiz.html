@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    사지선다 문제 정답 확인하기
+    ● name 값 주는 이유 : 중복 선택을 방지
+    ● value 값 주는 이유 : 선택해야 하기 때문  
+    -->
+    <h2>지금 배우고 있는 프로그래밍 언어는?</h2>
+
+    <ol>
+        <li><label>javaScript<input type="radio" class="exam" value="A" name="rd"></label></li>
+        <li><label>JAVA<input type="radio" class="exam" value="B" name="rd"></label></li>
+        <li><label>C언어<input type="radio" class="exam" value="C" name="rd"></label></li>
+        <li><label>Phython<input type="radio" class="exam" value="D" name="rd"></label></li>
+     </ol>
+
+    <button id="btn">평가</button>
+    <div id="content"></div>
+
+    <script>
+        document.querySelector("#btn").addEventListener("click", function () {
+            var list = document.querySelectorAll('.exam');      // querySelectorAll 써서 Error 방지★
+            var str = "<h2>오답입니다.</h2>";
+            for (let i = 0; i < list.length; i++) {
+                if (list[i].checked && list[i].value === "A") {
+                    str = "<h2>정답입니다.</h2>";
+                    break;
+                }
+            }
+            document.querySelector("#content").innerHTML = str;
+        }, false);
+    </script>
+
+</body>
+</html>

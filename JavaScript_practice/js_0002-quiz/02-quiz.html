@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var num = prompt("what's your name?"); 입력한 문자나 숫자가
+        // alert(num);  여기에 그대로 출력됨
+
+        var name = prompt('이름을 입력하세요.')
+        alert(`내 이름은 ${name} 입니다.`);
+
+        var age = prompt('나이를 입력하세요.')
+        console.log(`제 나이는 ${age} 입니다.`);
+
+        var hobby = prompt('취미를 말해보세요.')
+        document.write(`제 취미는 ${hobby} 입니다.`);
+
+        var address = prompt('주소를 말해보세요.');
+        document.write(`저는 ${address}에 삽니다.`);
+
+        var num = prompt('강조하고 싶은 만큼 써주세요.');
+        document.write(`<${num}> 이곳을 강조 </${num}>`);
+
+        var text = prompt('문자를 써주세요.');
+        document.write(`<input type='text' value=${text}>`);
+
+        var color = prompt('색상을 입력하세요.');
+        document.write(`<div style = "width:100px; height:100px; background-color:${color}"></div>`);
+
+    </script>
+</body>
+</html>

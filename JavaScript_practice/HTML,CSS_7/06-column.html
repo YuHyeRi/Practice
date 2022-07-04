@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .col {
+            column-count: 3;
+            /* count나 width로 다단을 나눌 수 있음 */
+            column-gap: 30px;
+            column-rule: 3px dashed gray;
+            text-align: justify;
+            /* justify : 양쪽 정렬 */
+            /* center : 가운데 정렬 */
+        }
+        .no-col {
+            background: salmon;
+            /* column-span: none; */
+            column-span: all;
+            /* 다단을 나누지 않고 그냥 한줄로 표현하겠다는 뜻 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="col">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ab dolores quaerat perspiciatis at eaque est
+            possimus, earum doloremque accusantium eos atque nobis dignissimos alias rerum, beatae sapiente nulla
+            itaque.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit ab eius, quod culpa laudantium illum maxime
+            praesentium hic distinctio, unde molestias et. Voluptatibus pariatur in repellat. Consequatur accusantium
+            quam veritatis!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum minima dolorum asperiores eius perspiciatis
+            obcaecati enim fugiat dolor odit blanditiis sint illum, consectetur at quibusdam velit accusamus itaque
+            repellendus aspernatur.</p>
+        <div class="no-col">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, rem ut nesciunt nam sunt debitis nihil
+                veniam architecto quidem vitae possimus, iste, asperiores officiis perspiciatis alias amet numquam
+                explicabo incidunt.</p>
+        </div>
+    </div>
+</body>
+</html>

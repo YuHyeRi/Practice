@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 계산기 만들기 -->
+    <input type="text" name="v1" id="v1">
+    <input type="text" name="v2" id="v2"><br>
+    <button id='plus'>더하기</button>
+    <button id='minus'>빼기</button>
+    <button id='multiple'>곱하기</button>
+    <button id='divide'>나누기</button>
+
+    <script>
+
+        document.querySelector('#plus').addEventListener("click", function() {
+            var vPlus1=Number(document.querySelector('#v1').value);
+            var vPlus2=Number(document.querySelector('#v2').value);
+            alert(`${vPlus1+vPlus2}`);
+        },false);
+
+        document.querySelector('#minus').addEventListener("click", function() {
+            var vMinus1=Number(document.querySelector('#v1').value);
+            var vMinus2=Number(document.querySelector('#v2').value);
+            alert(`${vMinus1-vMinus2}`);
+        },false);
+
+        document.querySelector('#multiple').addEventListener("click", function() {
+            var vMultiple1=Number(document.querySelector('#v1').value);
+            var vMultiple2=Number(document.querySelector('#v2').value);
+            alert(`${vMultiple1*vMultiple2}`);
+        },false);
+
+        document.querySelector('#divide').addEventListener("click", function() {
+            var vDivide1=Number(document.querySelector('#v1').value);
+            var vDivide2=Number(document.querySelector('#v2').value);
+            alert(`${vDivide1/vDivide2}`);
+        },false);
+
+    </script>
+</body>
+</html>

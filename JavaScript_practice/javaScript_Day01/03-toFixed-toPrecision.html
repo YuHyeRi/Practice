@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        console.log('foo' * 1)      // NaN (String * Number)
+        console.log(Infinity * 0)   // NaN
+        console.log(Infinity * Infinity)   // Infinity
+
+        console.log(10/3);    // 3.3333333333333335
+        console.log(Math.ceil(10/3))    // 4 ▶ 올림
+        console.log(Math.floor(10/3));  // 3 ▶ 내림
+        console.log(Math.round(10/3));  // 3 ▶ 반올림
+
+        var a = 1.123456 ;
+        // toFixed() : 소수점 자리수 자르기
+        console.log(a.toFixed());   // 1
+        console.log(a.toFixed(1));  // 1.1
+        console.log(a.toFixed(2));  // 1.12
+        console.log(a.toFixed(3));  // 1.123
+
+        var b = 1.123456;
+        // toPrecision() : 수의 길이 자르기
+        console.log(a.toPrecision());   // 1.123456
+        console.log(a.toPrecision(1));  // 1
+        console.log(a.toPrecision(2));  // 1.1
+        console.log(a.toPrecision(3));  // 1.12
+
+        console.log(2 ** 3);    // 8 (2의3승)
+        console.log(-(2 ** 3)); // -8
+        // console.log(-2 ** 3);   // Error
+        
+    </script>
+
+</body>
+</html>

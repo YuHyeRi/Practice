@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0000-jquery/jquery-3.6.0.js"></script>
+    <script>
+        $(function() {
+            $('#btn1').data({'text' : 'Hello'});
+            $('#btn2').data({'text' : 'world!'});
+
+            $('.text').text($('#btn1').data("text"))        // p태그에 hello 출력
+            $('.text').text($('#btn2').data("text"))        // p태그에 world 출력
+        });
+    </script>
+</head>
+<body>
+    <p><button id="btn1">버튼1</button></p>
+    <p><button id="btn2">버튼2</button></p>
+    <p class="text"></p>
+</body>
+</html>

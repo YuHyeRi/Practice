@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 논리연산자 (&&, ||, !)
+        // AND : 첫번째 false를 발견하는 즉시 평가를 멈춤
+        // OR : 첫번째 true를 발견하는 즉시 평가를 멈춤
+        // heavy한 연산자일수록 뒤에 놓기
+
+        // and 연산자가 or 연산자 보다 우선 처리된다. 그렇기 때문에 괄호로 묶어준다.
+        // Question. 남자이고, 이름이 mike 이거나 성인이면 통과
+        const sex = 'F';
+        const name = 'kate';
+        const isAdult = true;
+
+        if(sex === 'M' && (name === 'mike' || isAdult)) {
+            console.log('통과')
+        } else {
+            console.log('돌아가')
+        };
+    </script>
+    
+</body>
+</html>

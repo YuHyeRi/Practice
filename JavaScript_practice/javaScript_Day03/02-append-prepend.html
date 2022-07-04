@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content"><p>기존 텍스트</p></div>
+
+    <script>
+        // prepend : 앞 삽입
+        // append : 뒤 삽입
+
+        var element1 = document.createElement('b');   // createElement : 'b태그라는' 요소를 만들어줌
+        var element2 = document.createElement('b');
+        var text = document.createTextNode('새로운 텍스트1');   // createTextNode : 선택한 요소에 '텍스트'를 추가해줌
+        var text2 = document.createTextNode('새로운 텍스트2');
+
+        element1.append(text);
+        element2.append(text2);
+
+        document.querySelector('#content').prepend(element1);     // 기존 p태그 위 삽입
+        document.querySelector('#content').append(element2);      // 기존 p태그 아래 삽입
+        // document.querySelector('#content').append(element1,element2);       // 복수개의 태그도 삽입 가능
+    </script>
+</body>
+</html>

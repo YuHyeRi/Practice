@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id='val1' name='val1'><br>
+    <input type="text" id='val2' name='val2'><br>
+    <button id='creat'>생성</button>
+    <div id = 'table'></div>
+
+    <script>
+        // 테이블 제조기
+        // addEventListener 은 이벤트를 등록하는 가장 권장되는 방식
+        document.querySelector('#creat').addEventListener("click", function(){
+        var val1 = Number(document.querySelector('#val1').value);
+        var val2 = Number(document.querySelector('#val2').value);
+
+        var result = "<table>";
+        
+            for(let index = 0; index < val1; index++) {             // 행 : tr
+                result += '<tr>';                    
+                for(let index2 = 0; index2 < val2; index2++) {     // 열 : td
+                    result += `<td>${index}_${index2}</td>`
+                }
+                result += '</tr>';
+            }
+            result += '</table>';
+            document.querySelector('#table').innerHTML = result;
+    }, false);
+    </script>
+
+</body>
+</html>

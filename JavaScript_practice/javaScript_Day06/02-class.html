@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mystyle {
+            width: 500px;
+            height: 50px;
+            padding: 15px;
+            border: 1px solid black;
+        }
+        .anotherClass {
+            background-color: salmon;
+            color: white;
+        }
+        .thirdClass {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <div id="mydiv">i am a div element</div>
+    <script>
+        document.querySelector('#btn').addEventListener('click',function() {
+            this.nextElementSibling.classList.add('mystyle','anotherClass','thirdClass');
+        },false);
+    </script>
+</body>
+</html>
